@@ -30,5 +30,10 @@ namespace Travail1
                 affichageJoueurs[i - 1].Controls.Add(affichageJoueurs[i]);
             }
         }
+
+        private void FormJeu_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

@@ -52,6 +52,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "FormJeu";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormJeu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPlancheJeu)).EndInit();
             this.ResumeLayout(false);
 
