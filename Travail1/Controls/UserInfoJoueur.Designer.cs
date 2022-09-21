@@ -83,7 +83,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UserInfoJoueur";
-            this.Size = new System.Drawing.Size(742, 424);
+            this.Size = new System.Drawing.Size(446, 110);
             this.Load += new System.EventHandler(this.UserInfoJoueur_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.picPlancheJeu = new System.Windows.Forms.PictureBox();
+            this.userInfoJoueur1 = new Travail1.Controls.UserInfoJoueur();
             ((System.ComponentModel.ISupportInitialize)(this.picPlancheJeu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,11 +43,20 @@
             this.picPlancheJeu.TabIndex = 0;
             this.picPlancheJeu.TabStop = false;
             // 
+            // userInfoJoueur1
+            // 
+            this.userInfoJoueur1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.userInfoJoueur1.Location = new System.Drawing.Point(7, 7);
+            this.userInfoJoueur1.Name = "userInfoJoueur1";
+            this.userInfoJoueur1.Size = new System.Drawing.Size(509, 817);
+            this.userInfoJoueur1.TabIndex = 1;
+            // 
             // FormJeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1341, 836);
+            this.Controls.Add(this.userInfoJoueur1);
             this.Controls.Add(this.picPlancheJeu);
             this.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -61,5 +71,6 @@
         #endregion
 
         private PictureBox picPlancheJeu;
+        private Controls.UserInfoJoueur userInfoJoueur1;
     }
 }

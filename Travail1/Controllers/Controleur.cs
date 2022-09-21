@@ -38,7 +38,7 @@ namespace Travail1.Controllers
 
             joueurs[0] = new Joueur(0, nomJoueur, Color.Blue);
             joueurs[1] = new Joueur(1, nomJoueur, Color.Red);
-            MessageBox.Show(joueurs[0].Nom);
+            //MessageBox.Show(joueurs[0].Nom);
         }
 
         public Bitmap DessinerPlancheJeu()
