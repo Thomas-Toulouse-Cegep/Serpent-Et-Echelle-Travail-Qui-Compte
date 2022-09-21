@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Travail1.Controls;
 using Travail1.Models;
 using Travail1.Models.Case;
 using Travail1.Models.Point;
@@ -52,6 +53,15 @@ namespace Travail1.Controllers
                 }
             }
             return bitmap;
+        }
+
+        public void AvancerJoueur(Joueur? joueur)
+        {
+            if (joueur is null)
+            {
+                
+            }
+            
         }
     }
 }
