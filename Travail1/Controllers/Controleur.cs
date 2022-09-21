@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Travail1.Models;
 using Travail1.Models.Case;
 using Travail1.Models.Point;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Travail1.Controllers
 {
@@ -19,7 +20,7 @@ namespace Travail1.Controllers
         public Controleur()
         {
             InitialiserCases();
-            InitialiserJoueurs();
+            InitialiserJoueurs("");
         }
 
         private void InitialiserCases()
@@ -31,11 +32,13 @@ namespace Travail1.Controllers
             }
         }
 
-        private void InitialiserJoueurs()
+        public void InitialiserJoueurs(string nomJoueur)
         {
             joueurs = new Joueur[2];
-            joueurs[0] = new Joueur(0, "joueur1", Color.Blue);
-            joueurs[1] = new Joueur(1, "joueur2", Color.Red);
+
+            joueurs[0] = new Joueur(0, nomJoueur, Color.Blue);
+            joueurs[1] = new Joueur(1, nomJoueur, Color.Red);
+            //MessageBox.Show(joueurs[0].Nom);
         }
 
         public Bitmap DessinerPlancheJeu()

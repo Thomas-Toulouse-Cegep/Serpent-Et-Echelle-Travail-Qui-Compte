@@ -1,4 +1,7 @@
 ﻿using Travail1.Models;
+using Travail1.Controllers;
+
+using Travail1.Models;
 
 namespace Travail1.Views
 
@@ -31,8 +34,10 @@ namespace Travail1.Views
             }
             else
             {
-                Joueur joueur1 = new Joueur(1, txtJoueur1.Text, Color.Red);
-                Joueur joueur2 = new Joueur(2, txtJoueur2.Text, Color.Blue);
+                Controleur controleur = new Controleur();
+
+                controleur.InitialiserJoueurs(txtJoueur1.Text);
+                controleur.InitialiserJoueurs(txtJoueur2.Text);
                 formJeu.Show();
                 formMenu.Close();
             }
