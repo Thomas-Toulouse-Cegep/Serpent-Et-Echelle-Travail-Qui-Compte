@@ -28,62 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbnomJoueur1 = new System.Windows.Forms.Label();
+            this.lbAffichageJoueur1 = new System.Windows.Forms.Label();
+            this.lbaffichagepointJoueur1 = new System.Windows.Forms.Label();
+            this.lbpointJoueur1 = new System.Windows.Forms.Label();
+            this.lbaffichagepointJoueur2 = new System.Windows.Forms.Label();
+            this.lbpointJoueur2 = new System.Windows.Forms.Label();
+            this.lbAffichageJoueur2 = new System.Windows.Forms.Label();
+            this.lbnomJoueur2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lbnomJoueur1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 41);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nom du Joueur:";
+            this.lbnomJoueur1.AutoSize = true;
+            this.lbnomJoueur1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbnomJoueur1.Location = new System.Drawing.Point(3, 0);
+            this.lbnomJoueur1.Name = "lbnomJoueur1";
+            this.lbnomJoueur1.Size = new System.Drawing.Size(231, 41);
+            this.lbnomJoueur1.TabIndex = 0;
+            this.lbnomJoueur1.Text = "Nom du Joueur:";
             // 
-            // label2
+            // lbAffichageJoueur1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(240, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 41);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "AffnomJoueur";
+            this.lbAffichageJoueur1.AutoSize = true;
+            this.lbAffichageJoueur1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbAffichageJoueur1.Location = new System.Drawing.Point(240, 0);
+            this.lbAffichageJoueur1.Name = "lbAffichageJoueur1";
+            this.lbAffichageJoueur1.Size = new System.Drawing.Size(205, 41);
+            this.lbAffichageJoueur1.TabIndex = 1;
+            this.lbAffichageJoueur1.Text = "AffnomJoueur";
             // 
-            // label3
+            // lbaffichagepointJoueur1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(115, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 41);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "affPoint";
+            this.lbaffichagepointJoueur1.AutoSize = true;
+            this.lbaffichagepointJoueur1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbaffichagepointJoueur1.Location = new System.Drawing.Point(115, 53);
+            this.lbaffichagepointJoueur1.Name = "lbaffichagepointJoueur1";
+            this.lbaffichagepointJoueur1.Size = new System.Drawing.Size(119, 41);
+            this.lbaffichagepointJoueur1.TabIndex = 3;
+            this.lbaffichagepointJoueur1.Text = "affPoint";
             // 
-            // label4
+            // lbpointJoueur1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 53);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 41);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Points:";
+            this.lbpointJoueur1.AutoSize = true;
+            this.lbpointJoueur1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbpointJoueur1.Location = new System.Drawing.Point(3, 53);
+            this.lbpointJoueur1.Name = "lbpointJoueur1";
+            this.lbpointJoueur1.Size = new System.Drawing.Size(106, 41);
+            this.lbpointJoueur1.TabIndex = 2;
+            this.lbpointJoueur1.Text = "Points:";
+            // 
+            // lbaffichagepointJoueur2
+            // 
+            this.lbaffichagepointJoueur2.AutoSize = true;
+            this.lbaffichagepointJoueur2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbaffichagepointJoueur2.Location = new System.Drawing.Point(115, 174);
+            this.lbaffichagepointJoueur2.Name = "lbaffichagepointJoueur2";
+            this.lbaffichagepointJoueur2.Size = new System.Drawing.Size(119, 41);
+            this.lbaffichagepointJoueur2.TabIndex = 7;
+            this.lbaffichagepointJoueur2.Text = "affPoint";
+            // 
+            // lbpointJoueur2
+            // 
+            this.lbpointJoueur2.AutoSize = true;
+            this.lbpointJoueur2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbpointJoueur2.Location = new System.Drawing.Point(3, 174);
+            this.lbpointJoueur2.Name = "lbpointJoueur2";
+            this.lbpointJoueur2.Size = new System.Drawing.Size(106, 41);
+            this.lbpointJoueur2.TabIndex = 6;
+            this.lbpointJoueur2.Text = "Points:";
+            // 
+            // lbAffichageJoueur2
+            // 
+            this.lbAffichageJoueur2.AutoSize = true;
+            this.lbAffichageJoueur2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbAffichageJoueur2.Location = new System.Drawing.Point(240, 121);
+            this.lbAffichageJoueur2.Name = "lbAffichageJoueur2";
+            this.lbAffichageJoueur2.Size = new System.Drawing.Size(205, 41);
+            this.lbAffichageJoueur2.TabIndex = 5;
+            this.lbAffichageJoueur2.Text = "AffnomJoueur";
+            // 
+            // lbnomJoueur2
+            // 
+            this.lbnomJoueur2.AutoSize = true;
+            this.lbnomJoueur2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbnomJoueur2.Location = new System.Drawing.Point(3, 121);
+            this.lbnomJoueur2.Name = "lbnomJoueur2";
+            this.lbnomJoueur2.Size = new System.Drawing.Size(231, 41);
+            this.lbnomJoueur2.TabIndex = 4;
+            this.lbnomJoueur2.Text = "Nom du Joueur:";
             // 
             // UserInfoJoueur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbaffichagepointJoueur2);
+            this.Controls.Add(this.lbpointJoueur2);
+            this.Controls.Add(this.lbAffichageJoueur2);
+            this.Controls.Add(this.lbnomJoueur2);
+            this.Controls.Add(this.lbaffichagepointJoueur1);
+            this.Controls.Add(this.lbpointJoueur1);
+            this.Controls.Add(this.lbAffichageJoueur1);
+            this.Controls.Add(this.lbnomJoueur1);
             this.Name = "UserInfoJoueur";
-            this.Size = new System.Drawing.Size(446, 110);
+            this.Size = new System.Drawing.Size(446, 274);
             this.Load += new System.EventHandler(this.UserInfoJoueur_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -92,9 +140,13 @@
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
+        private Label lbnomJoueur1;
+        private Label lbAffichageJoueur1;
+        private Label lbaffichagepointJoueur1;
+        private Label lbpointJoueur1;
+        private Label lbaffichagepointJoueur2;
+        private Label lbpointJoueur2;
+        private Label lbAffichageJoueur2;
+        private Label lbnomJoueur2;
     }
 }
