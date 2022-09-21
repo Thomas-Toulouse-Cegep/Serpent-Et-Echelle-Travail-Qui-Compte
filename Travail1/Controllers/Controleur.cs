@@ -28,7 +28,6 @@ namespace Travail1.Controllers
             for (int i = 0; i < cases.Length; i++)
             {
                 cases[i] = new Case(new Points(0), i);
-                MessageBox.Show(cases[i].ToString());
             }
         }
 
@@ -50,6 +49,15 @@ namespace Travail1.Controllers
                 }
             }
             return bitmap;
+        }
+
+        public void AvancerJoueur(int nbCase)
+        {
+            Joueur joueur1 = joueurs[0];
+            Joueur joueur2 = joueurs[1];
+            int positionActuelle = joueur1.Position;
+            MessageBox.Show(nbCase.ToString());
+            
         }
     }
 }

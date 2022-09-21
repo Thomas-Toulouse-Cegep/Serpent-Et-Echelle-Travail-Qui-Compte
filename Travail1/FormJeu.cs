@@ -30,5 +30,13 @@ namespace Travail1
                 affichageJoueurs[i - 1].Controls.Add(affichageJoueurs[i]);
             }
         }
+
+        private void btnAvancer_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            int lol = random.Next(0,7);
+            MessageBox.Show(lol.ToString());
+            controleur.AvancerJoueur(lol);
+        }
     }
 }
