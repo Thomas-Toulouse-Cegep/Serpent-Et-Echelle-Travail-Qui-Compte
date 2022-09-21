@@ -28,7 +28,6 @@ namespace Travail1.Controllers
             for (int i = 0; i < cases.Length; i++)
             {
                 cases[i] = new Case(new Points(0), i);
-                MessageBox.Show(cases[i].ToString());
             }
         }
 
