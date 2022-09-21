@@ -32,6 +32,7 @@ namespace Travail1
             }
         }
 
+
         private void btnAvancer_Click(object sender, EventArgs e)
         {
             Random random = new Random();

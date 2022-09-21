@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             this.picPlancheJeu = new System.Windows.Forms.PictureBox();
+
             this.btnAvancer = new System.Windows.Forms.Button();
             this.lblTour = new System.Windows.Forms.Label();
             this.lblJoueur = new System.Windows.Forms.Label();
+
             ((System.ComponentModel.ISupportInitialize)(this.picPlancheJeu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,6 +47,7 @@
             this.picPlancheJeu.TabIndex = 0;
             this.picPlancheJeu.TabStop = false;
             // 
+
             // btnAvancer
             // 
             this.btnAvancer.Location = new System.Drawing.Point(300, 761);
@@ -72,15 +75,18 @@
             this.lblJoueur.Size = new System.Drawing.Size(220, 41);
             this.lblJoueur.TabIndex = 3;
             this.lblJoueur.Text = "Nom du joueur";
+
             // 
             // FormJeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1341, 836);
+
             this.Controls.Add(this.lblJoueur);
             this.Controls.Add(this.lblTour);
             this.Controls.Add(this.btnAvancer);
+
             this.Controls.Add(this.picPlancheJeu);
             this.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(6);
@@ -96,8 +102,10 @@
         #endregion
 
         private PictureBox picPlancheJeu;
+
         private Button btnAvancer;
         private Label lblTour;
         private Label lblJoueur;
+
     }
 }
