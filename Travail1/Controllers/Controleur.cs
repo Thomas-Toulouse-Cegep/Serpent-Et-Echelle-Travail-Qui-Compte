@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Travail1.Controls;
 using Travail1.Models;
 using Travail1.Models.Case;
 using Travail1.Models.Point;
@@ -51,12 +52,12 @@ namespace Travail1.Controllers
             return bitmap;
         }
 
-        public void AvancerJoueur(int nbCase)
+        public void AvancerJoueur(Joueur? joueur)
         {
-            Joueur joueur1 = joueurs[0];
-            Joueur joueur2 = joueurs[1];
-            int positionActuelle = joueur1.Position;
-            MessageBox.Show(nbCase.ToString());
+            if (joueur is null)
+            {
+                
+            }
             
         }
     }
