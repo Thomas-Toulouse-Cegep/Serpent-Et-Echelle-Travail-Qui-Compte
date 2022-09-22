@@ -18,7 +18,15 @@ namespace Travail1.Models
         public int Id { get => id; }
         public string Nom { get => nom; }
         public int Points { get => points; }
-        public int Position { get => position; set => position = value; }
+
+        public int Position
+        {
+            get => position; set
+            {
+                Position = value;
+                ABouger?.Invoke(this.position, position);
+            }
+        }
 
         public event EventHandler ABouger;
 
