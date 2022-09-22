@@ -15,13 +15,16 @@ namespace Travail1.Controllers
     {
         private Case[] cases;
         private Joueur[] joueurs;
-
+        private string nom1;
+        private string nom2;
         public Joueur[] Joueurs { get => joueurs; }
+        public string Nom1 { get => nom1; set => nom1 = value; }
+        public string Nom2 { get => nom2; set => nom2 = value; }
 
         public Controleur()
         {
             InitialiserCases();
-            InitialiserJoueurs("");
+            InitialiserJoueurs(Nom1, Nom2);
         }
 
         private void InitialiserCases()
@@ -33,12 +36,12 @@ namespace Travail1.Controllers
             }
         }
 
-        public void InitialiserJoueurs(string nomJoueur)
+        public void InitialiserJoueurs(string nomJoueur1, string nomJoueur2)
         {
             joueurs = new Joueur[2];
 
-            joueurs[0] = new Joueur(0, nomJoueur, Color.Blue);
-            joueurs[1] = new Joueur(1, nomJoueur, Color.Red);
+            joueurs[0] = new Joueur(0, nomJoueur1, Color.Blue);
+            joueurs[1] = new Joueur(1, nomJoueur2, Color.Red);
             //MessageBox.Show(joueurs[0].Nom);
         }
 
@@ -59,9 +62,7 @@ namespace Travail1.Controllers
         {
             if (joueur is null)
             {
-                
             }
-            
         }
     }
 }

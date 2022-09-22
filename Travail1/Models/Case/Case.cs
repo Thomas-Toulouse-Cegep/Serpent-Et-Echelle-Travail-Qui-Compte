@@ -14,7 +14,7 @@ namespace Travail1.Models.Case
         private int position;
         private int largeur;
 
-        public int Points {get => points.ObtenirPoints(); }
+        //public int Points {get => points.ObtenirPoints(); }
 
         public Case(Points points, int position)
         {

@@ -36,8 +36,9 @@ namespace Travail1.Views
             {
                 Controleur controleur = new Controleur();
 
-                controleur.InitialiserJoueurs(txtJoueur1.Text);
-                controleur.InitialiserJoueurs(txtJoueur2.Text);
+                controleur.InitialiserJoueurs(txtJoueur1.Text, txtJoueur2.Text);
+                controleur.Nom1 = txtJoueur1.Text;
+
                 formJeu.Show();
                 formMenu.Close();
             }
