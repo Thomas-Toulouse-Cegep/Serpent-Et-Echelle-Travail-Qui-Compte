@@ -19,10 +19,17 @@ namespace Travail1.Models
         public string Nom { get => nom; }
 
         public int Points { get => points; set => points = value; }
-        public int Position { get => position; }
 
+        public int Position
+        {
+            get => position; set
+            {
+                Position = value;
+                ABouger?.Invoke(this.position, position);
+            }
+        }
 
-        public event EventHandler ABouger;
+        public event EventHandler<int> ABouger;
 
         public Joueur(int id, string nom, Color couleur)
         {
@@ -57,7 +64,5 @@ namespace Travail1.Models
             }
             return bitmap;
         }
-
-
     }
 }
