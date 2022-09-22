@@ -55,7 +55,5 @@ namespace Travail1.Models
             }
             return bitmap;
         }
-
-
     }
 }
