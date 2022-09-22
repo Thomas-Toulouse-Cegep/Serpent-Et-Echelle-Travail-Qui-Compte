@@ -28,7 +28,7 @@ namespace Travail1.Models
             }
         }
 
-        public event EventHandler ABouger;
+        public event EventHandler<int> ABouger;
 
         public Joueur(int id, string nom, Color couleur)
         {
