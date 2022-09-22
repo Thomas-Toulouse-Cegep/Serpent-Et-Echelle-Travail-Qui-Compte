@@ -15,13 +15,22 @@ namespace Travail1.Controllers
     {
         private Case[] cases;
         private Joueur[] joueurs;
+        private Joueur joueurNow;
+        private int id;
 
         public Joueur[] Joueurs { get => joueurs; }
+        public int Id { get => id; set => id = value; }
+        public Joueur JoueurNow { get => joueurNow; set => joueurNow = value; }
+
+        public event EventHandler<Joueur> joueurBouger;
 
         public Controleur()
         {
             InitialiserCases();
-            InitialiserJoueurs("");
+            InitialiserJoueurs("","");
+
+            Id = 0;
+            joueurNow = Joueurs[id];
         }
 
         private void InitialiserCases()
@@ -33,13 +42,12 @@ namespace Travail1.Controllers
             }
         }
 
-        public void InitialiserJoueurs(string nomJoueur)
+        public void InitialiserJoueurs(string nomJoueur1, string nomJoueur2)
         {
             joueurs = new Joueur[2];
 
-            joueurs[0] = new Joueur(0, nomJoueur, Color.Blue);
-            joueurs[1] = new Joueur(1, nomJoueur, Color.Red);
-            //MessageBox.Show(joueurs[0].Nom);
+            joueurs[0] = new Joueur(0, nomJoueur1, Color.Blue);
+            joueurs[1] = new Joueur(1, nomJoueur2, Color.Red);
         }
 
         public Bitmap DessinerPlancheJeu()
@@ -55,13 +63,13 @@ namespace Travail1.Controllers
             return bitmap;
         }
 
-        public void AvancerJoueur(Joueur? joueur)
+        public void AvancerJoueur()
         {
-            if (joueur is null)
-            {
-                
-            }
-            
+            Joueur newJoueur = joueurs[0];
+
+            JoueurNow = newJoueur;
+            JoueurNow.Dessiner();
+            joueurBouger?.Invoke(this, JoueurNow);
         }
     }
 }
