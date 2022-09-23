@@ -19,6 +19,17 @@ namespace Travail1.Controls
             Height = 801;
             Width = 801;
             Image = joueur.Dessiner();
+            abonnement();
+        }
+
+        public void abonnement()
+        {
+            joueur.joueurBouger += Joueur_joueurBouger;
+        }
+
+        private void Joueur_joueurBouger(object? sender, int e)
+        {
+            Image = joueur.Dessiner();
         }
     }
 }
