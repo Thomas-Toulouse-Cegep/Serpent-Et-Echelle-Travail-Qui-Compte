@@ -32,19 +32,18 @@ namespace Travail1
             }
         }
 
-
         private void btnAvancer_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-            int nouvellePosition = random.Next(1,7);
-            controleur.Joueurs[id].Position = controleur.Joueurs[id].Position + nouvellePosition;
+            int nouvellePosition = random.Next(1, 7);
+            // controleur.Joueurs[id].Position = controleur.Joueurs[id].Position + nouvellePosition;
             controleur.AvancerJoueur();
             Tour();
         }
 
         private void Tour()
         {
-            if(id == 0)
+            if (id == 0)
             {
                 id = 1;
                 lblJoueur.Text = controleur.Joueurs[1].Nom;
