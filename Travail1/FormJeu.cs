@@ -32,7 +32,6 @@ namespace Travail1
             }
         }
 
-
         private void btnAvancer_Click(object sender, EventArgs e)
         {
             controleur.AvancerJoueur();
@@ -41,7 +40,7 @@ namespace Travail1
 
         private void Tour()
         {
-            if(id == 0)
+            if (id == 0)
             {
                 id = 1;
                 lblJoueur.Text = controleur.Joueurs[1].Nom;

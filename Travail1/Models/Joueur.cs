@@ -17,7 +17,9 @@ namespace Travail1.Models
 
         public int Id { get => id; }
         public string Nom { get => nom; }
+
         public int Points { get => points; }
+
 
         public int Position
         {
