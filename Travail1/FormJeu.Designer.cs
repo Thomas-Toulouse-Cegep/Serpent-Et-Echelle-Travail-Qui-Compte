@@ -33,6 +33,7 @@
             this.lblTour = new System.Windows.Forms.Label();
             this.lblJoueur = new System.Windows.Forms.Label();
             this.userInfoJoueur1 = new Travail1.Controls.UserInfoJoueur();
+            this.lstDebug = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPlancheJeu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,14 +80,24 @@
             this.userInfoJoueur1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.userInfoJoueur1.Location = new System.Drawing.Point(6, 7);
             this.userInfoJoueur1.Name = "userInfoJoueur1";
-            this.userInfoJoueur1.Size = new System.Drawing.Size(510, 507);
+            this.userInfoJoueur1.Size = new System.Drawing.Size(510, 230);
             this.userInfoJoueur1.TabIndex = 4;
+            // 
+            // lstDebug
+            // 
+            this.lstDebug.FormattingEnabled = true;
+            this.lstDebug.ItemHeight = 41;
+            this.lstDebug.Location = new System.Drawing.Point(12, 243);
+            this.lstDebug.Name = "lstDebug";
+            this.lstDebug.Size = new System.Drawing.Size(492, 455);
+            this.lstDebug.TabIndex = 5;
             // 
             // FormJeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1341, 836);
+            this.Controls.Add(this.lstDebug);
             this.Controls.Add(this.userInfoJoueur1);
             this.Controls.Add(this.lblJoueur);
             this.Controls.Add(this.lblTour);
@@ -111,5 +122,6 @@
         private Label lblTour;
         private Label lblJoueur;
         private Controls.UserInfoJoueur userInfoJoueur1;
+        private ListBox lstDebug;
     }
 }

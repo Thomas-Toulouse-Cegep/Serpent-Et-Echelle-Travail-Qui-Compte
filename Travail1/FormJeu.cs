@@ -34,8 +34,15 @@ namespace Travail1
 
         private void btnAvancer_Click(object sender, EventArgs e)
         {
+            int avant = controleur.Joueurs[id].Position;
+            lstDebug.Items.Add("joueur = " + controleur.Joueurs[id].Nom);
+            lstDebug.Items.Add("avant = " + avant.ToString());
             controleur.AvancerJoueur();
+            int apres = controleur.Joueurs[id].Position;
+            lstDebug.Items.Add("apres = " + apres.ToString());
+            lstDebug.Items.Add("de = " + (apres - avant).ToString());
             Tour();
+            lstDebug.Items.Add("TOUR SUIVANT");
         }
 
         private void Tour()
@@ -43,20 +50,21 @@ namespace Travail1
             if (id == 0)
             {
                 id = 1;
-                lblJoueur.Text = controleur.Joueurs[1].Nom;
+                lblJoueur.Text = controleur.Joueurs[id].Nom;
                 lblJoueur.ForeColor = Color.Red;
             }
             else
             {
                 id = 0;
-                lblJoueur.Text = controleur.Joueurs[0].Nom;
+                lblJoueur.Text = controleur.Joueurs[id].Nom;
                 lblJoueur.ForeColor = Color.Blue;
             }
         }
 
         private void FormJeu_Load(object sender, EventArgs e)
         {
-            Tour();
+            lblJoueur.Text = controleur.Joueurs[id].Nom;
+            lblJoueur.ForeColor = Color.Blue;
         }
     }
 }
