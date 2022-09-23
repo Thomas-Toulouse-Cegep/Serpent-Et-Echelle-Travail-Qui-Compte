@@ -34,14 +34,19 @@ namespace Travail1
 
         private void btnAvancer_Click(object sender, EventArgs e)
         {
+            //debug
             int avant = controleur.Joueurs[id].Position;
             lstDebug.Items.Add("joueur = " + controleur.Joueurs[id].Nom);
             lstDebug.Items.Add("avant = " + avant.ToString());
+            //a garder
             controleur.AvancerJoueur();
+            //debug
             int apres = controleur.Joueurs[id].Position;
             lstDebug.Items.Add("apres = " + apres.ToString());
             lstDebug.Items.Add("de = " + (apres - avant).ToString());
+            //a garder
             Tour();
+            //debug
             lstDebug.Items.Add("TOUR SUIVANT");
         }
 
