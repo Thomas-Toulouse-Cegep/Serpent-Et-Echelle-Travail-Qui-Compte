@@ -8,12 +8,12 @@ namespace Travail1
     {
         private Controleur controleur;
         private AffichageJoueur[] affichageJoueurs;
-        private int joueurJoue = 0;
+        private int id = 0;
 
-        public FormJeu()
+        public FormJeu(Controleur controleur)
         {
             InitializeComponent();
-            controleur = new Controleur();
+            this.controleur = controleur;
             picPlancheJeu.Image = controleur.DessinerPlancheJeu();
             InitAffichageJoueurs();
         }
@@ -32,53 +32,44 @@ namespace Travail1
             }
         }
 
-
         private void btnAvancer_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            int nouvellePosition = random.Next(1,7);
-            MessageBox.Show( "random = " + nouvellePosition.ToString());
-            MessageBox.Show("position avant = " + controleur.Joueurs[0].Position);
-            controleur.Joueurs[0].Position = controleur.Joueurs[0].Position + nouvellePosition;
-            MessageBox.Show("position apres = " + controleur.Joueurs[0].Position.ToString());
+            //debug
+            int avant = controleur.Joueurs[id].Position;
+            lstDebug.Items.Add("joueur = " + controleur.Joueurs[id].Nom);
+            lstDebug.Items.Add("avant = " + avant.ToString());
+            //a garder
+            controleur.AvancerJoueur();
+            //debug
+            int apres = controleur.Joueurs[id].Position;
+            lstDebug.Items.Add("apres = " + apres.ToString());
+            lstDebug.Items.Add("de = " + (apres - avant).ToString());
+            //a garder
             Tour();
+            //debug
+            lstDebug.Items.Add("TOUR SUIVANT");
         }
 
         private void Tour()
         {
-            if(joueurJoue == 0)
+            if (id == 0)
             {
-                joueurJoue = 1;
-                lblJoueur.Text = controleur.Joueurs[1].Nom;
+                id = 1;
+                lblJoueur.Text = controleur.Joueurs[id].Nom;
+                lblJoueur.ForeColor = Color.Red;
             }
             else
             {
-                joueurJoue = 0;
-                lblJoueur.Text = controleur.Joueurs[0].Nom;
+                id = 0;
+                lblJoueur.Text = controleur.Joueurs[id].Nom;
+                lblJoueur.ForeColor = Color.Blue;
             }
         }
 
         private void FormJeu_Load(object sender, EventArgs e)
         {
-            lblJoueur.Text = controleur.Joueurs[0].Nom;
+            lblJoueur.Text = controleur.Joueurs[id].Nom;
+            lblJoueur.ForeColor = Color.Blue;
         }
-
-        //private void SetJoueur(Joueur? joueur)
-        //{
-        //    if (joueur is null)
-        //    {
-        //        picboxForme.Image = null;
-        //    }
-        //    else
-        //    {
-        //        Desabonner();
-        //    }
-        //    this.forme = forme;
-        //    if (forme is not null)
-        //    {
-        //        Abonner();
-        //        InitForme();
-        //    }
-        //}
     }
 }

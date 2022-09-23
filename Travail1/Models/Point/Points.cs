@@ -23,7 +23,7 @@ namespace Travail1.Models.Point
             int position = joueur.Position;
 
 
-            joueur.Points = position;
+            //joueur.Points = position;
 
             int chance = random.Next(1, 101);
             if (chance <= 40)

@@ -18,11 +18,20 @@ namespace Travail1.Models
         public int Id { get => id; }
         public string Nom { get => nom; }
 
-        public int Points { get => points; set => points = value; }
-        public int Position { get => position; }
+        public int Points { get => points; }
 
 
-        public event EventHandler ABouger;
+        public int Position
+        {
+            get => position;
+            set
+            {
+                position = value;
+                joueurBouger?.Invoke(Position, position);
+            }
+        }
+
+        public event EventHandler<int> joueurBouger;
 
         public Joueur(int id, string nom, Color couleur)
         {
@@ -57,7 +66,5 @@ namespace Travail1.Models
             }
             return bitmap;
         }
-
-
     }
 }
