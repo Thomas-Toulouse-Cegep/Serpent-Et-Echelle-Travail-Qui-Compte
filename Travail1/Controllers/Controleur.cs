@@ -27,7 +27,7 @@ namespace Travail1.Controllers
         public Controleur()
         {
             InitialiserCases();
-            InitialiserJoueurs("", "");
+            InitialiserJoueurs("","");
 
             Id = 0;
             joueurNow = Joueurs[id];
@@ -57,7 +57,6 @@ namespace Travail1.Controllers
             {
                 foreach (var uneCase in cases)
                 {
-                    qwqdfa
                     uneCase.Dessiner(graphics);
                 }
             }
@@ -67,7 +66,7 @@ namespace Travail1.Controllers
         public void AvancerJoueur()
         {
             Random random = new Random();
-            joueurs[id].Position = +random.Next(1, 7);
+            joueurs[id].Position =+ random.Next(1, 7);
         }
     }
 }

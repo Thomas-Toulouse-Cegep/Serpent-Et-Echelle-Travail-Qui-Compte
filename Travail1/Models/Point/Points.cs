@@ -8,7 +8,7 @@ namespace Travail1.Models.Point
 {
     public class Points
     {
-        Random random = new Random();
+        private Random random = new Random();
         private int valeur;
         private int chance;
 
@@ -17,27 +17,24 @@ namespace Travail1.Models.Point
             this.valeur = valeur;
         }
 
-        public int ObtenirPoints(Joueur joueur) 
+        public int ObtenirPoints(Joueur joueur)
         {
             int point = joueur.Points;
             int position = joueur.Position;
 
-
-            joueur.Points = position;
+            //joueur.Points = position;
 
             int chance = random.Next(1, 101);
             if (chance <= 40)
             {
                 valeur = valeur + position;
                 point = point + valeur;
-
             }
             else if (chance > 40 & chance <= 80)
             {
                 valeur = valeur - position;
                 point = point + valeur;
-
-            }               
+            }
             else if (chance > 80 & chance <= 90)
             {
                 valeur = position * 2;
