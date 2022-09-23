@@ -15,12 +15,10 @@ namespace Travail1.Controllers
     {
         private Case[] cases;
         private Joueur[] joueurs;
-        private Joueur joueurNow;
         private int id;
 
         public Joueur[] Joueurs { get => joueurs; }
         public int Id { get => id; set => id = value; }
-        public Joueur JoueurNow { get => joueurNow; set => joueurNow = value; }
 
         public event EventHandler<Joueur> joueurBouger;
 
@@ -30,7 +28,6 @@ namespace Travail1.Controllers
             InitialiserJoueurs("","");
 
             Id = 0;
-            joueurNow = Joueurs[id];
         }
 
         private void InitialiserCases()
@@ -66,7 +63,20 @@ namespace Travail1.Controllers
         public void AvancerJoueur()
         {
             Random random = new Random();
-            joueurs[id].Position =+ random.Next(1, 7);
+            joueurs[id].Position = joueurs[id].Position + random.Next(1, 7);
+            Tour();
+        }
+
+        private void Tour()
+        {
+            if (id == 0)
+            {
+                id = 1;
+            }
+            else
+            {
+                id = 0;
+            }
         }
     }
 }

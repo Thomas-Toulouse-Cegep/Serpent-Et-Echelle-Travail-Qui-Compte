@@ -19,6 +19,7 @@ namespace Travail1.Controls
 
         private void UserInfoJoueur_Load(object sender, EventArgs e)
         {
+
         }
     }
 }
