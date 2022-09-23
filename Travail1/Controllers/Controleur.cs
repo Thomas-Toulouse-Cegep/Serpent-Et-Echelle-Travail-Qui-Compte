@@ -23,13 +23,14 @@ namespace Travail1.Controllers
         public int Id { get => id; set => id = value; }
         public Joueur JoueurNow { get => joueurNow; set => joueurNow = value; }
 
-        public event EventHandler<Joueur> joueurBouger;
+        public event EventHandler<Joueur> DeCourantChanged;
 
+        public event EventHandler<Joueur> joueurBouger;
 
         public Controleur()
         {
             InitialiserCases();
-            InitialiserJoueurs("","");
+            InitialiserJoueurs("", "");
 
             Id = 0;
             joueurNow = Joueurs[id];
