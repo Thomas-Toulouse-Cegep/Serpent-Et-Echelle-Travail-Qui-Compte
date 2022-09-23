@@ -32,7 +32,17 @@ namespace Travail1.Models
             }
         }
 
-        public event EventHandler<int> ABouger;
+        public int Position
+        {
+            get => position;
+            set
+            {
+                position = value;
+                joueurBouger?.Invoke(Position, position);
+            }
+        }
+
+        public event EventHandler<int> joueurBouger;
 
         public Joueur(int id, string nom, Color couleur)
         {

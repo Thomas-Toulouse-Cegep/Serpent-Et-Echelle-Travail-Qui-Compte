@@ -10,10 +10,10 @@ namespace Travail1
         private AffichageJoueur[] affichageJoueurs;
         private int id = 0;
 
-        public FormJeu()
+        public FormJeu(Controleur controleur)
         {
             InitializeComponent();
-            controleur = new Controleur();
+            this.controleur = controleur;
             picPlancheJeu.Image = controleur.DessinerPlancheJeu();
             InitAffichageJoueurs();
         }
@@ -34,9 +34,6 @@ namespace Travail1
 
         private void btnAvancer_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            int nouvellePosition = random.Next(1, 7);
-            // controleur.Joueurs[id].Position = controleur.Joueurs[id].Position + nouvellePosition;
             controleur.AvancerJoueur();
             Tour();
         }
@@ -47,17 +44,19 @@ namespace Travail1
             {
                 id = 1;
                 lblJoueur.Text = controleur.Joueurs[1].Nom;
+                lblJoueur.ForeColor = Color.Red;
             }
             else
             {
                 id = 0;
                 lblJoueur.Text = controleur.Joueurs[0].Nom;
+                lblJoueur.ForeColor = Color.Blue;
             }
         }
 
         private void FormJeu_Load(object sender, EventArgs e)
         {
-            lblJoueur.Text = controleur.Joueurs[0].Nom;
+            Tour();
         }
     }
 }

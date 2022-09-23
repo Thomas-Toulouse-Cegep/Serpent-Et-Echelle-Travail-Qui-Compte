@@ -65,11 +65,8 @@ namespace Travail1.Controllers
 
         public void AvancerJoueur()
         {
-            Joueur newJoueur = joueurs[0];
-
-            JoueurNow = newJoueur;
-            JoueurNow.Dessiner();
-            joueurBouger?.Invoke(this, JoueurNow);
+            Random random = new Random();
+            joueurs[id].Position =+ random.Next(1, 7);
         }
     }
 }
