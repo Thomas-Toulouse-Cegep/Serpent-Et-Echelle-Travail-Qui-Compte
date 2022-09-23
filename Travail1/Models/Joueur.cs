@@ -25,15 +25,6 @@ namespace Travail1.Models
 
         public int Position
         {
-            get => position; set
-            {
-                Position = value;
-                ABouger?.Invoke(this.position, position);
-            }
-        }
-
-        public int Position
-        {
             get => position;
             set
             {

@@ -13,7 +13,7 @@ namespace Travail1
         public FormJeu(Controleur controleur)
         {
             InitializeComponent();
-            this.controleur = controleur;
+            controleur = new Controleur();
             picPlancheJeu.Image = controleur.DessinerPlancheJeu();
             InitAffichageJoueurs();
         }
@@ -34,6 +34,9 @@ namespace Travail1
 
         private void btnAvancer_Click(object sender, EventArgs e)
         {
+            Random random = new Random();
+            int nouvellePosition = random.Next(1, 7);
+            // controleur.Joueurs[id].Position = controleur.Joueurs[id].Position + nouvellePosition;
             controleur.AvancerJoueur();
             Tour();
         }
@@ -44,19 +47,17 @@ namespace Travail1
             {
                 id = 1;
                 lblJoueur.Text = controleur.Joueurs[1].Nom;
-                lblJoueur.ForeColor = Color.Red;
             }
             else
             {
                 id = 0;
                 lblJoueur.Text = controleur.Joueurs[0].Nom;
-                lblJoueur.ForeColor = Color.Blue;
             }
         }
 
         private void FormJeu_Load(object sender, EventArgs e)
         {
-            Tour();
+            lblJoueur.Text = controleur.Joueurs[0].Nom;
         }
     }
 }
