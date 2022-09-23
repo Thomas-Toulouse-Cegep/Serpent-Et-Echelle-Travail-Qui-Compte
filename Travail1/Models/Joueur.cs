@@ -21,14 +21,15 @@ namespace Travail1.Models
 
         public int Position
         {
-            get => position; set
+            get => position;
+            set
             {
-                Position = value;
-                ABouger?.Invoke(this.position, position);
+                position = value;
+                joueurBouger?.Invoke(Position, position);
             }
         }
 
-        public event EventHandler<int> ABouger;
+        public event EventHandler<int> joueurBouger;
 
         public Joueur(int id, string nom, Color couleur)
         {

@@ -40,6 +40,7 @@ namespace Travail1
             controleur.Joueurs[id].Position = controleur.Joueurs[id].Position + nouvellePosition;
             controleur.AvancerJoueur();
             Tour();
+            MessageBox.Show(controleur.Joueurs[id].Position.ToString());
         }
 
         private void Tour()
