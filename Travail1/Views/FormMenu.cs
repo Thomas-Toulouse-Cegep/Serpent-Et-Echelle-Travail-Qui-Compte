@@ -7,15 +7,15 @@ namespace Travail1.Views
 {
     public partial class FormMenu : Form
     {
+        Controleur controleur = new Controleur();
+
         public FormMenu()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            var formJeu = new FormJeu();
-            var formMenu = new FormMenu();
+        {                        
             if (txtJoueur1.Text == "" || txtJoueur2.Text == "")
             {
                 if (txtJoueur1.Text == "" && txtJoueur2.Text == "")
@@ -33,11 +33,10 @@ namespace Travail1.Views
             }
             else
             {
-                Controleur controleur = new Controleur();
-
                 controleur.InitialiserJoueurs(txtJoueur1.Text, txtJoueur2.Text);
-                formJeu.Show();
-                formMenu.Close();
+                var formJeu = new FormJeu(controleur);
+                formJeu.ShowDialog();
+                Close();
             }
         }
     }
