@@ -18,9 +18,6 @@ namespace Travail1.Controllers
         private Joueur joueurNow;
         private int id;
 
-        private Joueur joueurNow;
-        private int id;
-
         public Joueur[] Joueurs { get => joueurs; }
         public int Id { get => id; set => id = value; }
         public Joueur JoueurNow { get => joueurNow; set => joueurNow = value; }
@@ -30,7 +27,7 @@ namespace Travail1.Controllers
         public Controleur()
         {
             InitialiserCases();
-            InitialiserJoueurs("","");
+            InitialiserJoueurs("", "");
 
             Id = 0;
             joueurNow = Joueurs[id];

@@ -39,8 +39,12 @@ namespace Travail1.Controls
             if (controleur is not null)
             {
                 InitAffichage();
-                // Abonner(); // abonne au nouveau dé
+                Abonner();
             }
+        }
+
+        private void Abonner()
+        {
         }
 
         private void InitAffichage()
@@ -86,7 +90,7 @@ namespace Travail1.Controls
         {
             //MessageBox.Show(Controleur.);
 
-            Controleur.InitialiserJoueurs(lbAffichageJoueur1.Text, lbAffichageJoueur2.Text);
+            //Controleur.InitialiserJoueurs(lbAffichageJoueur1.Text, lbAffichageJoueur2.Text);
         }
     }
 }
