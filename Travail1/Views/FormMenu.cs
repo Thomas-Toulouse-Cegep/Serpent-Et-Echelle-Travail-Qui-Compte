@@ -17,19 +17,19 @@ namespace Travail1.Views
         {
             var formJeu = new FormJeu();
             var formMenu = new FormMenu();
-            if (txtJoueur1.Text is "" || txtJoueur2.Text is "")
+            if (txtJoueur1.Text == "" || txtJoueur2.Text == "")
             {
-                if (txtJoueur1.Text is null)
+                if (txtJoueur1.Text == "" && txtJoueur2.Text == "")
                 {
-                    MessageBox.Show("Veuillez choisir votre nom de joueur 1");
+                    MessageBox.Show("Veuillez choisir votre nom de joueur 1 et joueur 2");
                 }
-                else if (txtJoueur2.Text is null)
+                else if (txtJoueur1.Text == "")
                 {
                     MessageBox.Show("Veuillez choisir votre nom de joueur 1");
                 }
                 else
                 {
-                    MessageBox.Show("Veuillez choisir votre nom de joueur 1 et joueur");
+                    MessageBox.Show("Veuillez choisir votre nom de joueur 2");
                 }
             }
             else
@@ -37,8 +37,7 @@ namespace Travail1.Views
                 Controleur controleur = new Controleur();
 
                 controleur.InitialiserJoueurs(txtJoueur1.Text, txtJoueur2.Text);
-                controleur.Nom1 = txtJoueur1.Text;
-
+                this.Hide();
                 formJeu.Show();
                 formMenu.Close();
             }

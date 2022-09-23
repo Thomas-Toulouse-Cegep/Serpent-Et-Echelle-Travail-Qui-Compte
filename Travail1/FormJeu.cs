@@ -8,7 +8,7 @@ namespace Travail1
     {
         private Controleur controleur;
         private AffichageJoueur[] affichageJoueurs;
-        private int joueurJoue = 0;
+        private int id = 0;
 
         public FormJeu()
         {
@@ -36,23 +36,21 @@ namespace Travail1
         {
             Random random = new Random();
             int nouvellePosition = random.Next(1, 7);
-            MessageBox.Show("random = " + nouvellePosition.ToString());
-            MessageBox.Show("position avant = " + controleur.Joueurs[0].Position);
-            //controleur.Joueurs[0].Position = controleur.Joueurs[0].Position + nouvellePosition;
-            MessageBox.Show("position apres = " + controleur.Joueurs[0].Position.ToString());
+            // controleur.Joueurs[id].Position = controleur.Joueurs[id].Position + nouvellePosition;
+            controleur.AvancerJoueur();
             Tour();
         }
 
         private void Tour()
         {
-            if (joueurJoue == 0)
+            if (id == 0)
             {
-                joueurJoue = 1;
+                id = 1;
                 lblJoueur.Text = controleur.Joueurs[1].Nom;
             }
             else
             {
-                joueurJoue = 0;
+                id = 0;
                 lblJoueur.Text = controleur.Joueurs[0].Nom;
             }
         }
@@ -61,23 +59,5 @@ namespace Travail1
         {
             lblJoueur.Text = controleur.Joueurs[0].Nom;
         }
-
-        //private void SetJoueur(Joueur? joueur)
-        //{
-        //    if (joueur is null)
-        //    {
-        //        picboxForme.Image = null;
-        //    }
-        //    else
-        //    {
-        //        Desabonner();
-        //    }
-        //    this.forme = forme;
-        //    if (forme is not null)
-        //    {
-        //        Abonner();
-        //        InitForme();
-        //    }
-        //}
     }
 }

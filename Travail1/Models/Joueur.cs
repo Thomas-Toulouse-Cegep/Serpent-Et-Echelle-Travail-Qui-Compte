@@ -15,7 +15,10 @@ namespace Travail1.Models
         private Color couleur;
         private int diametre;
 
+        public event EventHandler<Joueur> GetJouuer;
+
         public int Id { get => id; }
+
         public string Nom { get => nom; }
 
         public int Points { get => points; set => points = value; }

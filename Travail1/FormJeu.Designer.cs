@@ -76,11 +76,10 @@
             // 
             // userInfoJoueur1
             // 
-            this.userInfoJoueur1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.userInfoJoueur1.Location = new System.Drawing.Point(9, 9);
-            this.userInfoJoueur1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userInfoJoueur1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.userInfoJoueur1.Location = new System.Drawing.Point(6, 7);
             this.userInfoJoueur1.Name = "userInfoJoueur1";
-            this.userInfoJoueur1.Size = new System.Drawing.Size(507, 484);
+            this.userInfoJoueur1.Size = new System.Drawing.Size(510, 507);
             this.userInfoJoueur1.TabIndex = 4;
             // 
             // FormJeu
