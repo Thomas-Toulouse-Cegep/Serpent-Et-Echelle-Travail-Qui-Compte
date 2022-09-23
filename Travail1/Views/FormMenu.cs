@@ -1,6 +1,5 @@
 ﻿using Travail1.Models;
 using Travail1.Controllers;
-
 using Travail1.Models;
 
 namespace Travail1.Views
@@ -37,7 +36,6 @@ namespace Travail1.Views
                 Controleur controleur = new Controleur();
 
                 controleur.InitialiserJoueurs(txtJoueur1.Text, txtJoueur2.Text);
-                this.Hide();
                 formJeu.Show();
                 formMenu.Close();
             }

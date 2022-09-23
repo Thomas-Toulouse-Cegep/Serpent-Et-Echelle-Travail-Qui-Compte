@@ -15,6 +15,8 @@ namespace Travail1.Controllers
     {
         private Case[] cases;
         private Joueur[] joueurs;
+        private Joueur joueurNow;
+        private int id;
 
         private Joueur joueurNow;
         private int id;
@@ -23,14 +25,12 @@ namespace Travail1.Controllers
         public int Id { get => id; set => id = value; }
         public Joueur JoueurNow { get => joueurNow; set => joueurNow = value; }
 
-        public event EventHandler<Joueur> DeCourantChanged;
-
         public event EventHandler<Joueur> joueurBouger;
 
         public Controleur()
         {
             InitialiserCases();
-            InitialiserJoueurs("", "");
+            InitialiserJoueurs("","");
 
             Id = 0;
             joueurNow = Joueurs[id];
