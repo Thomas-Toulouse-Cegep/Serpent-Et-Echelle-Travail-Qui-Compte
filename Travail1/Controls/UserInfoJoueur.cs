@@ -39,7 +39,7 @@ namespace Travail1.Controls
             }
             else
             {
-                throw new NotImplementedException();
+                Desabonner();
             }
             this.controleur = controleur;
             if (controleur is not null)
@@ -51,7 +51,14 @@ namespace Travail1.Controls
 
         private void Abonner()
         {
-            throw new NotImplementedException();
+            //controleur.joueurBouger += De_ValeurChanged;
+        }
+        private void Desabonner()
+        {
+            if (controleur is not null)
+            {
+               // controleur.joueurBouger -=;
+            }
         }
 
         private void InitAffichage()
