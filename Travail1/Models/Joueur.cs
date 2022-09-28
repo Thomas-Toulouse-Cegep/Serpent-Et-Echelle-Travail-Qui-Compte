@@ -24,6 +24,8 @@
             }
         }
 
+        public event EventHandler<string> JoueurChangerNom;
+
         public event EventHandler<int> joueurBouger;
 
         public Joueur(int id, string nom, Color couleur)
