@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Travail1.Controls;
-using Travail1.Models;
+﻿using Travail1.Models;
 using Travail1.Models.Case;
 using Travail1.Models.Point;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Travail1.Controllers
 {
