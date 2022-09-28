@@ -6,7 +6,7 @@ namespace Travail1.Controllers
 {
     public class Controleur
     {
-        private Cases[] cases;
+        private Case[] cases;
         private Joueur[] joueurs;
         private int id;
         private bool gameOver;
@@ -30,7 +30,7 @@ namespace Travail1.Controllers
         {
             int seed = SeedGenerator(69);
 
-            cases = new Cases[64];
+            cases = new Case[64];
             for (int i = 0; i < cases.Length; i++)
             {
                 cases[i] = new CaseEchelle(new Points(0), i);
