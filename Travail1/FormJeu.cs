@@ -72,7 +72,7 @@ namespace Travail1
                 {
                     MessageBox.Show("Le joueur " + controleur.Joueurs[1].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en égalité avec " + controleur.Joueurs[id].Points + " Points.");
                 }
-                MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " à gagner et il a " + controleur.Joueurs[id].Points + " Points.");
+
                 this.Hide();
                 FormMenu formMenu = new FormMenu();
                 formMenu.ShowDialog();
