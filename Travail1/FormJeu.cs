@@ -61,9 +61,12 @@ namespace Travail1
             lstDebug.Items.Add("TOUR SUIVANT");
             if (controleur.GameOver == true)
             {
+                this.Hide();
                 FormMenu formMenu = new FormMenu();
-                formMenu.Show();
-                // Close();
+                MessageBox.Show(this.ToString());
+                //this.Show();
+                formMenu.ShowDialog();
+                Close();
             }
         }
 
