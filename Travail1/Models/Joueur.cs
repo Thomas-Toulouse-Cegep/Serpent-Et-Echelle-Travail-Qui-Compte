@@ -20,7 +20,6 @@ namespace Travail1.Models
 
         public int Points { get => points; }
 
-
         public int Position
         {
             get => position;
@@ -30,6 +29,8 @@ namespace Travail1.Models
                 joueurBouger?.Invoke(Position, position);
             }
         }
+
+        public event EventHandler<string> JoueurChangerNom;
 
         public event EventHandler<int> joueurBouger;
 

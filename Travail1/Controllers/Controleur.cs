@@ -22,10 +22,12 @@ namespace Travail1.Controllers
 
         public event EventHandler<Joueur> joueurBouger;
 
+        public event EventHandler<string> JoueurChangerNom;
+
         public Controleur()
         {
             InitialiserCases();
-            InitialiserJoueurs("","");
+            InitialiserJoueurs("", "");
 
             Id = 0;
         }
