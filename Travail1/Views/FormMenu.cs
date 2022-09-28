@@ -1,5 +1,6 @@
 ﻿using Travail1.Models;
 using Travail1.Controllers;
+
 using Travail1.Models;
 
 namespace Travail1.Views
@@ -7,7 +8,7 @@ namespace Travail1.Views
 {
     public partial class FormMenu : Form
     {
-        Controleur controleur = new Controleur();
+        private Controleur controleur = new Controleur();
 
         public FormMenu()
         {
@@ -15,7 +16,7 @@ namespace Travail1.Views
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {                        
+        {
             if (txtJoueur1.Text == "" || txtJoueur2.Text == "")
             {
                 if (txtJoueur1.Text == "" && txtJoueur2.Text == "")
@@ -33,6 +34,7 @@ namespace Travail1.Views
             }
             else
             {
+                this.Hide();
                 controleur.InitialiserJoueurs(txtJoueur1.Text, txtJoueur2.Text);
                 var formJeu = new FormJeu(controleur);
                 formJeu.ShowDialog();
