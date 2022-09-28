@@ -9,9 +9,10 @@ namespace Travail1.Controllers
         private Case[] cases;
         private Joueur[] joueurs;
         private int id;
-
+        private bool gameOver;
         public Joueur[] Joueurs { get => joueurs; }
         public int Id { get => id; set => id = value; }
+        public bool GameOver { get => gameOver; set => gameOver = value; }
 
         public event EventHandler<Joueur> joueurBouger;
 
@@ -57,9 +58,25 @@ namespace Travail1.Controllers
 
         public void AvancerJoueur()
         {
+            int new_position = 0;
             Random random = new Random();
-            joueurs[id].Position = joueurs[id].Position + random.Next(1, 7);
-            Tour();
+            new_position = joueurs[id].Position + random.Next(1, 7);
+            if (new_position > 63)
+            {
+                gameOver = false;
+                Tour();
+            }
+            else if (new_position == 63)
+            {
+                joueurs[id].Position = new_position;
+                gameOver = true;
+            }
+            else
+            {
+                gameOver = false;
+                joueurs[id].Position = new_position;
+                Tour();
+            }
         }
 
         private void Tour()

@@ -1,6 +1,7 @@
 using Travail1.Controllers;
 using Travail1.Controls;
 using Travail1.Models;
+using Travail1.Views;
 
 namespace Travail1
 {
@@ -26,7 +27,6 @@ namespace Travail1
 
         private void Controleur_JoueurChangerNom(object? sender, string nom)
         {
-          
         }
 
         private void InitAffichageJoueurs()
@@ -59,6 +59,12 @@ namespace Travail1
             Tour();
             //debug
             lstDebug.Items.Add("TOUR SUIVANT");
+            if (controleur.GameOver == true)
+            {
+                FormMenu formMenu = new FormMenu();
+                formMenu.Show();
+                // Close();
+            }
         }
 
         private void Tour()
