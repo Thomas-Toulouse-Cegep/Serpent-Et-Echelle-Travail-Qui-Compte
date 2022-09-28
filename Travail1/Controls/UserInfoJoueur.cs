@@ -1,4 +1,5 @@
 ﻿using Travail1.Controllers;
+using Travail1.Models;
 
 namespace Travail1.Controls
 {
@@ -27,6 +28,8 @@ namespace Travail1.Controls
             {
                 lbAffichageJoueur1.Text = "";
                 lbAffichageJoueur2.Text = "";
+                lbaffichagepointJoueur1.Text = "";
+                lbaffichagepointJoueur2.Text = "";
             }
             else
             {
@@ -42,14 +45,19 @@ namespace Travail1.Controls
 
         private void Abonner()
         {
-            //controleur.joueurBouger += De_ValeurChanged;
+            controleur.JoueurChangerNom += Joueur_ChangedName;
+        }
+
+        private void Joueur_ChangedName(object? sender, string nom)
+        {
+            lbAffichageJoueur1.Text = nom;
         }
 
         private void Desabonner()
         {
             if (controleur is not null)
             {
-                // controleur.joueurBouger -=;
+                controleur.JoueurChangerNom -= Joueur_ChangedName;
             }
         }
 
@@ -57,6 +65,9 @@ namespace Travail1.Controls
         {
             lbAffichageJoueur1.Text = controleur.Joueurs[0].Nom;
             lbAffichageJoueur1.Text = controleur.Joueurs[1].Nom;
+            lbaffichagepointJoueur1.Text = controleur.Joueurs[0].Points.ToString();
+            lbaffichagepointJoueur1.Text = controleur.Joueurs[1].Points.ToString();
+            Console.WriteLine(controleur.Joueurs[0].Nom);
         }
 
         private void UserInfoJoueur_Load(object sender, EventArgs e)

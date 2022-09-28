@@ -16,6 +16,17 @@ namespace Travail1
             this.controleur = controleur;
             picPlancheJeu.Image = controleur.DessinerPlancheJeu();
             InitAffichageJoueurs();
+            abonnement();
+        }
+
+        public void abonnement()
+        {
+            controleur.JoueurChangerNom += Controleur_JoueurChangerNom;
+        }
+
+        private void Controleur_JoueurChangerNom(object? sender, string nom)
+        {
+          
         }
 
         private void InitAffichageJoueurs()
@@ -70,6 +81,10 @@ namespace Travail1
         {
             lblJoueur.Text = controleur.Joueurs[id].Nom;
             lblJoueur.ForeColor = Color.Blue;
+        }
+
+        private void userInfoJoueur1_Load(object sender, EventArgs e)
+        {
         }
     }
 }
