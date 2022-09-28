@@ -49,8 +49,8 @@ namespace Travail1.Controllers
 
         public Bitmap DessinerPlancheJeu()
         {
-            int seed = SeedGenerator(696969);
-
+            int seed = SeedGenerator(69);
+            MessageBox.Show(seed.ToString());
             Bitmap bitmap = new Bitmap(801, 801);
             using (Graphics graphics = Graphics.FromImage(bitmap))
             {
@@ -65,7 +65,7 @@ namespace Travail1.Controllers
         public void AvancerJoueur()
         {
             Random random = new Random();
-            joueurs[id].Position = joueurs[id].Position - 1 + random.Next(1, 7);
+            joueurs[id].Position = joueurs[id].Position + random.Next(1, 7) - 1;
             Tour();
         }
 
