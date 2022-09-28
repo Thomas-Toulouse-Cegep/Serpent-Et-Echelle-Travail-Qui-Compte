@@ -60,6 +60,7 @@ namespace Travail1
             lstDebug.Items.Add("TOUR SUIVANT");
             if (controleur.GameOver == true)
             {
+                MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " à gagner et il a " + controleur.Joueurs[id].Points + " Points.");
                 this.Hide();
                 FormMenu formMenu = new FormMenu();
                 formMenu.ShowDialog();
