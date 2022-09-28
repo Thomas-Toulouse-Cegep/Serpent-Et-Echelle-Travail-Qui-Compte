@@ -1,7 +1,4 @@
-﻿using Travail1.Models;
-using Travail1.Controllers;
-
-using Travail1.Models;
+﻿using Travail1.Controllers;
 
 namespace Travail1.Views
 

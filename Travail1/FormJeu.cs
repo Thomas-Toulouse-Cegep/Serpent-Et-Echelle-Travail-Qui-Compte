@@ -1,6 +1,5 @@
 using Travail1.Controllers;
 using Travail1.Controls;
-using Travail1.Models;
 using Travail1.Views;
 
 namespace Travail1
@@ -61,9 +60,10 @@ namespace Travail1
             lstDebug.Items.Add("TOUR SUIVANT");
             if (controleur.GameOver == true)
             {
+                this.Hide();
                 FormMenu formMenu = new FormMenu();
-                formMenu.Show();
-                // Close();
+                formMenu.ShowDialog();
+                Close();
             }
         }
 
