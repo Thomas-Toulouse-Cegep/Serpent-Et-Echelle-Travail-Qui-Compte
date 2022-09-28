@@ -25,7 +25,7 @@ namespace Travail1.Controllers
         public Controleur()
         {
             InitialiserCases();
-            InitialiserJoueurs("","");
+            InitialiserJoueurs("", "");
 
             Id = 0;
         }
@@ -35,7 +35,7 @@ namespace Travail1.Controllers
             cases = new Case[64];
             for (int i = 0; i < cases.Length; i++)
             {
-                cases[i] = new Case(new Points(0), i);
+                cases[i] = new CaseEchelle(new Points(0), i);
             }
         }
 
@@ -49,6 +49,8 @@ namespace Travail1.Controllers
 
         public Bitmap DessinerPlancheJeu()
         {
+            int seed = SeedGenerator(696969);
+
             Bitmap bitmap = new Bitmap(801, 801);
             using (Graphics graphics = Graphics.FromImage(bitmap))
             {
@@ -63,7 +65,7 @@ namespace Travail1.Controllers
         public void AvancerJoueur()
         {
             Random random = new Random();
-            joueurs[id].Position = joueurs[id].Position + random.Next(1, 7);
+            joueurs[id].Position = joueurs[id].Position - 1 + random.Next(1, 7);
             Tour();
         }
 
@@ -77,6 +79,13 @@ namespace Travail1.Controllers
             {
                 id = 0;
             }
+        }
+
+        private int SeedGenerator(int seed)
+        {
+            Random RandSeed = new Random(seed);
+            int finalSeed = RandSeed.Next();
+            return finalSeed;
         }
     }
 }
