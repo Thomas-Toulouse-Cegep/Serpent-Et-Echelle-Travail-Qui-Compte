@@ -62,8 +62,6 @@ namespace Travail1
             {
                 this.Hide();
                 FormMenu formMenu = new FormMenu();
-                MessageBox.Show(this.ToString());
-                //this.Show();
                 formMenu.ShowDialog();
                 Close();
             }
