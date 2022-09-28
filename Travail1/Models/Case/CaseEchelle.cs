@@ -7,7 +7,7 @@ using Travail1.Models.Point;
 
 namespace Travail1.Models.Case
 {
-    internal class CaseEchelle : Case
+    internal class CaseEchelle : Cases
     {
         private Points points;
         private int position;
