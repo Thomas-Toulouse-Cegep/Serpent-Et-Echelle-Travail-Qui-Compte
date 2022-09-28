@@ -38,7 +38,7 @@ namespace Travail1.Views
                 controleur.InitialiserJoueurs(txtJoueur1.Text, txtJoueur2.Text);
                 var formJeu = new FormJeu(controleur);
                 formJeu.ShowDialog();
-                Close();
+                //Close();
             }
         }
     }
