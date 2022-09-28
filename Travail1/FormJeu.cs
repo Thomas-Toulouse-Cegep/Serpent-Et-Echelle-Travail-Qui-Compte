@@ -1,6 +1,5 @@
 using Travail1.Controllers;
 using Travail1.Controls;
-using Travail1.Models;
 using Travail1.Views;
 
 namespace Travail1

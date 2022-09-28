@@ -28,10 +28,13 @@ namespace Travail1.Controllers
 
         private void InitialiserCases()
         {
+            int seed = SeedGenerator(69);
+            MessageBox.Show(seed.ToString());
+
             cases = new Case[64];
             for (int i = 0; i < cases.Length; i++)
             {
-                cases[i] = new Case(new Points(0), i);
+                cases[i] = new CaseEchelle(new Points(0), i);
             }
         }
 
@@ -60,6 +63,7 @@ namespace Travail1.Controllers
         {
             int new_position = 0;
             Random random = new Random();
+
             new_position = joueurs[id].Position + random.Next(1, 7);
             if (new_position > 63)
             {
@@ -77,6 +81,7 @@ namespace Travail1.Controllers
                 joueurs[id].Position = new_position;
                 Tour();
             }
+
         }
 
         private void Tour()
@@ -89,6 +94,13 @@ namespace Travail1.Controllers
             {
                 id = 0;
             }
+        }
+
+        private int SeedGenerator(int seed)
+        {
+            Random RandSeed = new Random(seed);
+            int finalSeed = RandSeed.Next();
+            return finalSeed;
         }
     }
 }
