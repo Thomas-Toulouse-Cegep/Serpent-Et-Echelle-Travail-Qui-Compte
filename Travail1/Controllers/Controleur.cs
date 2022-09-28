@@ -29,7 +29,6 @@ namespace Travail1.Controllers
         private void InitialiserCases()
         {
             int seed = SeedGenerator(69);
-            MessageBox.Show(seed.ToString());
 
             cases = new Case[64];
             for (int i = 0; i < cases.Length; i++)
@@ -81,7 +80,6 @@ namespace Travail1.Controllers
                 joueurs[id].Position = new_position;
                 Tour();
             }
-
         }
 
         private void Tour()
