@@ -70,7 +70,7 @@ namespace Travail1
                 }
                 else
                 {
-                    MessageBox.Show("Le joueur " + controleur.Joueurs[1].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en égalité avec " + controleur.Joueurs[id].Points + " Points.");
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[0].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en égalité avec " + controleur.Joueurs[id].Points + " Points.");
                 }
 
                 this.Hide();
