@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Travail1.Models
+﻿namespace Travail1.Models
 {
     public class Joueur
     {
@@ -19,7 +13,6 @@ namespace Travail1.Models
         public string Nom { get => nom; }
 
         public int Points { get => points; }
-
 
         public int Position
         {

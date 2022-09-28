@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Travail1.Controllers;
+﻿using Travail1.Controllers;
 
 namespace Travail1.Controls
 {
@@ -53,11 +44,12 @@ namespace Travail1.Controls
         {
             //controleur.joueurBouger += De_ValeurChanged;
         }
+
         private void Desabonner()
         {
             if (controleur is not null)
             {
-               // controleur.joueurBouger -=;
+                // controleur.joueurBouger -=;
             }
         }
 
@@ -67,11 +59,8 @@ namespace Travail1.Controls
             lbAffichageJoueur1.Text = controleur.Joueurs[1].Nom;
         }
 
-     
-
         private void UserInfoJoueur_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
