@@ -10,6 +10,13 @@ namespace Travail1.Controllers
         private Joueur[] joueurs;
         private int id;
         private bool gameOver;
+        private Random RandSeed = new Random(69);
+
+        private int nbEchelle = 0;
+        private int nbSaut = 0;
+        private int nbSerpent = 0;
+        private int nbTrape = 0;
+
         public Joueur[] Joueurs { get => joueurs; }
         public int Id { get => id; set => id = value; }
         public bool GameOver { get => gameOver; set => gameOver = value; }
@@ -29,24 +36,51 @@ namespace Travail1.Controllers
         private void InitialiserCases()
         {
             cases = new Case[64];
-            for (int i = 0; i < cases.Length; i++)
+
+            //3 premieres cases safe
+            for (int i = 0; i < 4; i++)
             {
-                int seed = SeedGenerator(69);
-                if (seed == 0)
-                {
-                    cases[i] = new Case(new Points(0), i);
-                }
-                else if (seed == 1)
+                cases[i] = new Case(new Points(i), i);
+            }
+
+            //3 dernieres caases safe
+            for (int i = 61; i < cases.Length; i++)
+            {
+                cases[i] = new Case(new Points(i), i);
+            }
+
+            //autres cases random
+            for (int i = 3; i < cases.Length - 3; i++)
+            {
+                int randCase = RandSeed.Next(0, 5);
+
+                //case echelle
+                if (randCase == 1)
                 {
                     cases[i] = new CaseEchelle(new Points(0), i);
+                    nbEchelle++;
                 }
-                else if (seed == 2)
+
+                //case saut
+                else if (randCase == 2)
                 {
                     cases[i] = new CaseSaut(new Points(0), i);
                 }
-                else if (seed == 3)
+                
+                //case trape
+                else if (randCase == 3)
                 {
                     cases[i] = new CaseTrape(new Points(0), i);
+                }
+
+                else if (randCase == 4)
+                {
+                    cases[i] = new CaseSerpent(new Points(0), i);
+                }
+
+                else
+                {
+                    cases[i] = new Case(new Points(i), i);
                 }
             }
         }
@@ -66,7 +100,6 @@ namespace Travail1.Controllers
             {
                 foreach (var uneCase in cases)
                 {
-                    MessageBox.Show(uneCase.GetType().Name);
                     uneCase.Dessiner(graphics);
                 }
             }
@@ -110,11 +143,60 @@ namespace Travail1.Controllers
             }
         }
 
-        private int SeedGenerator(int seed)
+        private bool Echelle()
         {
-            Random RandSeed = new Random(seed);
-            int finalSeed = RandSeed.Next(0,4);
-            return finalSeed;
+            if (nbEchelle == 4)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+            nbEchelle++;
+        }
+
+        private bool Saut()
+        {
+            if (nbSaut == 4)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+            nbSaut++;
+        }
+
+        private bool Serpent()
+        {
+            if (nbSerpent == 4)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+            nbSerpent++;
+        }
+
+        private bool Trape()
+        {
+            if (nbTrape == 4)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+            nbTrape++;
         }
     }
 }
