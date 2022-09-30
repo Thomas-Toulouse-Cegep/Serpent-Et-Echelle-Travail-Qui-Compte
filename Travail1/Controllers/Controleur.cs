@@ -28,13 +28,26 @@ namespace Travail1.Controllers
 
         private void InitialiserCases()
         {
-            int seed = SeedGenerator(69);
-            MessageBox.Show(seed.ToString());
-
             cases = new Case[64];
             for (int i = 0; i < cases.Length; i++)
             {
-                cases[i] = new CaseEchelle(new Points(0), i);
+                int seed = SeedGenerator(69);
+                if (seed == 0)
+                {
+                    cases[i] = new Case(new Points(0), i);
+                }
+                else if (seed == 1)
+                {
+                    cases[i] = new CaseEchelle(new Points(0), i);
+                }
+                else if (seed == 2)
+                {
+                    cases[i] = new CaseSaut(new Points(0), i);
+                }
+                else if (seed == 3)
+                {
+                    cases[i] = new CaseTrape(new Points(0), i);
+                }
             }
         }
 
@@ -53,6 +66,7 @@ namespace Travail1.Controllers
             {
                 foreach (var uneCase in cases)
                 {
+                    MessageBox.Show(uneCase.GetType().Name);
                     uneCase.Dessiner(graphics);
                 }
             }
@@ -99,7 +113,7 @@ namespace Travail1.Controllers
         private int SeedGenerator(int seed)
         {
             Random RandSeed = new Random(seed);
-            int finalSeed = RandSeed.Next();
+            int finalSeed = RandSeed.Next(0,4);
             return finalSeed;
         }
     }

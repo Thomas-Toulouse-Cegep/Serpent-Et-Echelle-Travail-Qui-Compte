@@ -11,7 +11,6 @@ namespace Travail1.Controls
         private Controleur controleur;
 
         public UserInfoJoueur()
-
         {
             InitializeComponent();
         }
