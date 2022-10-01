@@ -62,11 +62,11 @@ namespace Travail1.Controls
 
         private void InitAffichage()
         {
-            lbAffichageJoueur1.Text = controleur.Joueurs[0].Nom;
+            lbAffichageJoueur.Text = controleur.Joueurs[0].Nom;
             lbAffichageJoueur1.Text = controleur.Joueurs[1].Nom;
-            lbaffichagepointJoueur1.Text = controleur.Joueurs[0].Points.ToString();
+            lbaffichagepointJoueur.Text = controleur.Joueurs[0].Points.ToString();
             lbaffichagepointJoueur1.Text = controleur.Joueurs[1].Points.ToString();
-            Console.WriteLine(controleur.Joueurs[0].Nom);
+           
         }
 
         private void UserInfoJoueur_Load(object sender, EventArgs e)
