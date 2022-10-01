@@ -1,4 +1,5 @@
 ﻿using Travail1.Models.Point;
+using Travail1.Models;
 
 namespace Travail1.Models.Case
 {
@@ -7,8 +8,8 @@ namespace Travail1.Models.Case
         private Points points;
         private int position;
         private int largeur;
-
-        // public int Points {get => points.ObtenirPoints(); }
+        private int smallur;
+        public int Points { get => points.ObtenirPoints(smallur); set => smallur = value; }
 
         public Case(Points points, int position)
         {

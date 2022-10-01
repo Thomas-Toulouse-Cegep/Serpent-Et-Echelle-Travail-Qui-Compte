@@ -1,18 +1,23 @@
-﻿namespace Travail1.Models
+﻿using Travail1.Models.Point;
+
+namespace Travail1.Models
 {
     public class Joueur
     {
         private int id;
         private string nom;
-        private int points;
+        private int points = 0;
         private int position;
         private Color couleur;
         private int diametre;
-
         public int Id { get => id; }
         public string Nom { get => nom; }
 
-        public int Points { get => points; }
+        public int Points
+        {
+            get => points;
+            set => points = value ;
+        }
 
         public int Position
         {
@@ -24,7 +29,7 @@
             }
         }
 
-        public event EventHandler<string> JoueurChangerNom;
+        public event EventHandler<string> JoueurChangerPoints;
 
         public event EventHandler<int> joueurBouger;
 

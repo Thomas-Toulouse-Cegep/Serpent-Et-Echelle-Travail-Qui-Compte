@@ -54,6 +54,7 @@ namespace Travail1
             int apres = controleur.Joueurs[id].Position;
             lstDebug.Items.Add("apres = " + apres.ToString());
             lstDebug.Items.Add("de = " + (apres - avant).ToString());
+            lstDebug.Items.Add("point= " + controleur.Joueurs[id].Points);
             //a garder
             Tour();
             //debug

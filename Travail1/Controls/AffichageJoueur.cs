@@ -5,6 +5,7 @@ namespace Travail1.Controls
     public class AffichageJoueur : PictureBox
     {
         public Joueur joueur;
+        private int i;
 
         public AffichageJoueur(Joueur joueur) : base()
         {
@@ -13,6 +14,7 @@ namespace Travail1.Controls
             Height = 801;
             Width = 801;
             Image = joueur.Dessiner();
+            i = joueur.Points;
             abonnement();
         }
 

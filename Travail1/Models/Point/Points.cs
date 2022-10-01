@@ -1,9 +1,11 @@
-﻿namespace Travail1.Models.Point
+﻿using Travail1.Models.Case;
+
+namespace Travail1.Models.Point
 {
     public class Points
     {
         private Random random = new Random();
-        private int valeur;
+        private int valeur = 0;
         private int chance;
 
         public Points(int valeur)
@@ -11,9 +13,12 @@
             this.valeur = valeur;
         }
 
-        public int ObtenirPoints(Joueur joueur)
+        public virtual int ObtenirPoints(int i)
         {
-            int point = joueur.Points;
+            valeur += i;
+            return valeur;
+
+            /*int point = joueur.Points;
             int position = joueur.Position;
 
             //joueur.Points = position;
@@ -39,7 +44,7 @@
                 valeur = position * 0;
                 point = point + valeur;
             }
-            return valeur;
+            return valeur;*/
         }
     }
 }

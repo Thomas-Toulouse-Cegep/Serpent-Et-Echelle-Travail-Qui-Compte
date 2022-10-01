@@ -8,6 +8,8 @@ namespace Travail1.Controllers
     {
         private Case[] cases;
         private Joueur[] joueurs;
+        public Points pts = new Points(0);
+        private int i;
         private int id;
         private bool gameOver;
         public Joueur[] Joueurs { get => joueurs; }
@@ -64,9 +66,13 @@ namespace Travail1.Controllers
             Random random = new Random();
 
             new_position = joueurs[id].Position + random.Next(1, 7);
+
+            MessageBox.Show(i.ToString());
             if (new_position > 63)
             {
                 gameOver = false;
+                int o = cases[joueurs[id].Position].Points;
+                pts.ObtenirPoints(o);
                 Tour();
             }
             else if (new_position == 63)
@@ -87,10 +93,20 @@ namespace Travail1.Controllers
             if (id == 0)
             {
                 id = 1;
+
+                i = joueurs[id].Position;
+                MessageBox.Show(i.ToString());
+                cases[i].Points = i;
+                MessageBox.Show(cases[i].Points.ToString());
+                // i = pts.ChangedPoint();
+                //i=pts.ObtenirPoints();
+                // joueurs[id].Points = pts.ObtenirPoints();
             }
             else
             {
                 id = 0;
+                //joueurs[id].Point.ChangedPoint();
+                //joueurs[id].Points = pts.ObtenirPoints();
             }
         }
 
