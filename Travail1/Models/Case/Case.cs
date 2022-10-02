@@ -8,8 +8,8 @@ namespace Travail1.Models.Case
         private Points points;
         private int position;
         private int largeur;
-        private int smallur;
-        public int Points { get => points.ObtenirPoints(smallur); set => smallur = value; }
+
+        public int Points { get => points.ObtenirPoints(); set => points.ObtenirPoints(); }
 
         public Case(Points points, int position)
         {

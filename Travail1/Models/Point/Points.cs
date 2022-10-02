@@ -13,9 +13,15 @@ namespace Travail1.Models.Point
             this.valeur = valeur;
         }
 
-        public virtual int ObtenirPoints(int i)
+        public virtual int ajouterpoint(int pointCourant, int pointTotal)
         {
-            valeur += i;
+            pointTotal = valeur;
+            pointTotal = pointTotal + pointCourant;
+            return pointTotal;
+        }
+
+        public virtual int ObtenirPoints()
+        {
             return valeur;
 
             /*int point = joueur.Points;

@@ -16,7 +16,10 @@ namespace Travail1.Models
         public int Points
         {
             get => points;
-            set => points = value ;
+            set
+            {
+                points=value;
+            }
         }
 
         public int Position
@@ -29,7 +32,7 @@ namespace Travail1.Models
             }
         }
 
-        public event EventHandler<string> JoueurChangerPoints;
+        public event EventHandler<int> JoueurChangerPoints;
 
         public event EventHandler<int> joueurBouger;
 

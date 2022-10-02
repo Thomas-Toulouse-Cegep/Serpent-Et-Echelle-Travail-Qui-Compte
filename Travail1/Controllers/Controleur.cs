@@ -15,10 +15,11 @@ namespace Travail1.Controllers
         public Joueur[] Joueurs { get => joueurs; }
         public int Id { get => id; set => id = value; }
         public bool GameOver { get => gameOver; set => gameOver = value; }
+        public Case[] Cases { get => cases; set => cases = value; }
 
         public event EventHandler<Joueur> joueurBouger;
 
-        public event EventHandler<string> JoueurChangerNom;
+        public event EventHandler<int> JoueurChangerPoints;
 
         public Controleur()
         {
@@ -32,10 +33,10 @@ namespace Travail1.Controllers
         {
             int seed = SeedGenerator(69);
 
-            cases = new Case[64];
-            for (int i = 0; i < cases.Length; i++)
+            Cases = new Case[64];
+            for (int i = 0; i < Cases.Length; i++)
             {
-                cases[i] = new CaseEchelle(new Points(0), i);
+                Cases[i] = new CaseEchelle(new Points(0), i);
             }
         }
 
@@ -52,12 +53,18 @@ namespace Travail1.Controllers
             Bitmap bitmap = new Bitmap(801, 801);
             using (Graphics graphics = Graphics.FromImage(bitmap))
             {
-                foreach (var uneCase in cases)
+                foreach (var uneCase in Cases)
                 {
                     uneCase.Dessiner(graphics);
                 }
             }
             return bitmap;
+        }
+
+        public void penis()
+        {
+            pts.ajouterpoint(Cases[joueurs[id].Position].Points, joueurs[id].Points);
+            MessageBox.Show(joueurs[id].Points.ToString());
         }
 
         public void AvancerJoueur()
@@ -66,13 +73,11 @@ namespace Travail1.Controllers
             Random random = new Random();
 
             new_position = joueurs[id].Position + random.Next(1, 7);
-
-            MessageBox.Show(i.ToString());
+            penis();
             if (new_position > 63)
             {
                 gameOver = false;
-                int o = cases[joueurs[id].Position].Points;
-                pts.ObtenirPoints(o);
+
                 Tour();
             }
             else if (new_position == 63)
@@ -94,10 +99,6 @@ namespace Travail1.Controllers
             {
                 id = 1;
 
-                i = joueurs[id].Position;
-                MessageBox.Show(i.ToString());
-                cases[i].Points = i;
-                MessageBox.Show(cases[i].Points.ToString());
                 // i = pts.ChangedPoint();
                 //i=pts.ObtenirPoints();
                 // joueurs[id].Points = pts.ObtenirPoints();
