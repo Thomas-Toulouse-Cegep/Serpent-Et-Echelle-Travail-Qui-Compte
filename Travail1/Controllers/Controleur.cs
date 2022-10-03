@@ -163,14 +163,14 @@ namespace Travail1.Controllers
         }
 
         public void penis()
-        {
-            //MessageBox.Show(joueurs[id].Position.ToString());
-            //pts.ajouterpoint(joueurs[id].Position, joueurs[id].Points);
-            //MessageBox.Show(joueurs[id].Points.ToString());
+        {            
+            int ss = pts.ajouterpoint(joueurs[id].Position, Convert.ToInt32(joueurs[id].points));
+            joueurs[id].points = ss;
+            MessageBox.Show("lol = " + joueurs[id].Points.ToString());
         }
 
         public void AvancerJoueur()
-        {            
+        {
             Random random = new Random();
             int newPosition = joueurs[id].Position + random.Next(1, 7);
             int next = 0;

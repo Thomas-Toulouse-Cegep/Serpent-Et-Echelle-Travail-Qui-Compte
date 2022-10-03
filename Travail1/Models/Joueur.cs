@@ -6,21 +6,14 @@ namespace Travail1.Models
     {
         private int id;
         private string nom;
-        private int points = 0;
         private int position;
         private Color couleur;
         private int diametre;
+        public int points;
+
         public int Id { get => id; }
         public string Nom { get => nom; }
 
-        public int Points
-        {
-            get => points;
-            set
-            {
-                points=value;
-            }
-        }
 
         public int Position
         {
@@ -32,6 +25,8 @@ namespace Travail1.Models
             }
         }
 
+        public int Points { get => points; set => points = value; }
+
         public event EventHandler<int> JoueurChangerPoints;
 
         public event EventHandler<int> joueurBouger;
@@ -40,10 +35,10 @@ namespace Travail1.Models
         {
             this.id = id;
             this.nom = nom;
-            this.points = 0;
             this.position = 0;
             this.couleur = couleur;
             this.diametre = 20;
+            this.points = Points;
         }
 
         private PointF ObtenirCoordonees()
