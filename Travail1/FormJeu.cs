@@ -78,6 +78,7 @@ namespace Travail1
                 formMenu.ShowDialog();
                 Close();
             }
+            MessageBox.Show("CACA");
         }
 
         private void Tour()
