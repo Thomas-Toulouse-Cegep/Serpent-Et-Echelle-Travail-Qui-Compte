@@ -66,19 +66,19 @@ namespace Travail1.Controllers
                         //pas a la fin
                         if (i < 57)
                         {
-                            cases[i] = new CaseEchelle(new Points(0), i);
+                            cases[i] = new CaseEchelle(new PointQuitteOuDouble(0), i);
                             nbEchelle++;
                         }
                         else
                         {
                             cases[i] = new Case(new Points(i), i);
                         }
+                    }
+                    else
+                    {
+                        cases[i] = new Case(new Points(i), i);
+                    }
                 }
-                else
-                {
-                    cases[i] = new Case(new Points(i), i);
-                }
-            }
 
                 //case saut
                 else if (randCase == 2)
@@ -104,7 +104,7 @@ namespace Travail1.Controllers
                         //pas au debut
                         if (i > 8)
                         {
-                            cases[i] = new CaseSerpent(new Points(0), i);
+                            cases[i] = new CaseTrappe(new PointNegatif(0), i);
                             nbSerpent++;
                         }
                         else
@@ -124,7 +124,7 @@ namespace Travail1.Controllers
                     //4 case trape
                     if (Trape())
                     {
-                        cases[i] = new CaseTrappe(new Points(0), i);
+                        cases[i] = new CaseTrappe(new PointNegatif(0), i);
                         nbTrape++;
                     }
                     else
@@ -163,7 +163,7 @@ namespace Travail1.Controllers
         }
 
         public void penis()
-        {            
+        {
             int ss = pts.ajouterpoint(joueurs[id].Position, Convert.ToInt32(joueurs[id].points));
             joueurs[id].points = ss;
             MessageBox.Show("lol = " + joueurs[id].Points.ToString());
@@ -277,6 +277,7 @@ namespace Travail1.Controllers
                 return true;
             }
         }
+
         private bool Trape()
         {
             if (nbTrape == 4)
