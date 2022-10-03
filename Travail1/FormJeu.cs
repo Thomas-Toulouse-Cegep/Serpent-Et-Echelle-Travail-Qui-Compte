@@ -70,15 +70,15 @@ namespace Travail1
             {
                 if (controleur.Joueurs[0].Points > controleur.Joueurs[1].Points)
                 {
-                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " à gagner et il a " + controleur.Joueurs[id].Points + " Points.");
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " ï¿½ gagner et il a " + controleur.Joueurs[id].Points + " Points.");
                 }
                 else if (controleur.Joueurs[1].Points > controleur.Joueurs[0].Points)
                 {
-                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " à gagner et il a " + controleur.Joueurs[id].Points + " Points.");
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " ï¿½ gagner et il a " + controleur.Joueurs[id].Points + " Points.");
                 }
                 else
                 {
-                    MessageBox.Show("Le joueur " + controleur.Joueurs[0].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en égalité avec " + controleur.Joueurs[id].Points + " Points.");
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[0].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en ï¿½galitï¿½ avec " + controleur.Joueurs[id].Points + " Points.");
                 }
 
                 this.Hide();

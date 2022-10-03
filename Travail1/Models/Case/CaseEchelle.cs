@@ -9,10 +9,6 @@ namespace Travail1.Models.Case
 {
     internal class CaseEchelle : Case
     {
-        private Points points;
-        private int position;
-        private int largeur;
-
         public CaseEchelle(Points points, int position) : base(points, position)
         {
         }
@@ -28,11 +24,11 @@ namespace Travail1.Models.Case
             return new PointF { X = x * largeur, Y = y * largeur };
         }
 
-        public void Dessiner(Graphics graphics)
+        public override void Dessiner(Graphics graphics)
         {
             var coordonees = ObtenirCoordonees();
             var font = new Font("Calibri", 20);
-            graphics.FillRectangle(Brushes.Red, coordonees.X, coordonees.Y, largeur, largeur);
+            graphics.FillRectangle(Brushes.DarkCyan, coordonees.X, coordonees.Y, largeur, largeur);
             graphics.DrawString((position + 1).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
         }
     }

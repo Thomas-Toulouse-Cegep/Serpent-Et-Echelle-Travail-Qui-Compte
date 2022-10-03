@@ -5,9 +5,9 @@ namespace Travail1.Models.Case
 {
     public class Case
     {
-        private Points points;
-        private int position;
-        private int largeur;
+        protected Points points;
+        protected int position;
+        protected int largeur;
 
         public int Points { get => points.ObtenirPoints(); set => points.ObtenirPoints(); }
 
@@ -29,11 +29,11 @@ namespace Travail1.Models.Case
             return new PointF { X = x * largeur, Y = y * largeur };
         }
 
-        public void Dessiner(Graphics graphics)
+        public virtual void Dessiner(Graphics graphics)
         {
             var coordonees = ObtenirCoordonees();
             var font = new Font("Calibri", 20);
-            graphics.DrawRectangle(Pens.Black, coordonees.X, coordonees.Y, largeur, largeur);
+            graphics.FillRectangle(Brushes.White, coordonees.X, coordonees.Y, largeur, largeur);
             graphics.DrawString((position + 1).ToString(), font, Brushes.Black, coordonees.X + 30, coordonees.Y + 30);
         }
     }

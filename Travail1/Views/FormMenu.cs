@@ -10,6 +10,8 @@ namespace Travail1.Views
         public FormMenu()
         {
             InitializeComponent();
+            txtJoueur1.ForeColor = Color.Blue;
+            txtJoueur2.ForeColor = Color.Red;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,7 +38,9 @@ namespace Travail1.Views
                 var formJeu = new FormJeu(controleur);
                 formJeu.ShowDialog();
 
+
                 this.Close();
+
             }
         }
     }
