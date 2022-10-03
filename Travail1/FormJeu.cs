@@ -43,22 +43,24 @@ namespace Travail1
         }
 
         private void btnAvancer_Click(object sender, EventArgs e)
-        
+
         {
             //debug
             int avant = controleur.Joueurs[id].Position;
             lstDebug.Items.Add("joueur = " + controleur.Joueurs[id].Nom);
             lstDebug.Items.Add("avant = " + avant.ToString());
             //a garder
+
             controleur.AvancerJoueur();
 
             //debug
             int apres = controleur.Joueurs[id].Position;
             lstDebug.Items.Add("apres = " + apres.ToString());
             lstDebug.Items.Add("de = " + (apres - avant).ToString());
-            
-            //a garder
+            lstDebug.Items.Add("point= " + controleur.Joueurs[id].Points);
 
+            //a garder
+            //controleur.penis();
             Tour();
             // abonnement();
 
@@ -84,11 +86,8 @@ namespace Travail1
                 formMenu.ShowDialog();
                 Close();
             }
-             controleur.Cases[controleur.Joueurs[id].Position].Points = controleur.Joueurs[id].Position ;
-            controleur.Joueurs[id].Points += controleur.Cases[controleur.Joueurs[id].Position].Points;
-            lstDebug.Items.Add("point= " + controleur.Joueurs[id].Points);
-
-
+            // controleur.Cases[controleur.Joueurs[id].Position].Points = controleur.Joueurs[id].Position ;
+            //controleur.Joueurs[id].Points += controleur.Cases[controleur.Joueurs[id].Position];
         }
 
         private void Tour()

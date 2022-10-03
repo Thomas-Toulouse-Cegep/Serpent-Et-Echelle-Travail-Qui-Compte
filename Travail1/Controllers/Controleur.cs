@@ -63,7 +63,8 @@ namespace Travail1.Controllers
 
         public void penis()
         {
-            pts.ajouterpoint(Cases[joueurs[id].Position].Points, joueurs[id].Points);
+            MessageBox.Show(joueurs[id].Position.ToString());
+            pts.ajouterpoint(joueurs[id].Position, joueurs[id].Points);
             MessageBox.Show(joueurs[id].Points.ToString());
         }
 
@@ -73,7 +74,7 @@ namespace Travail1.Controllers
             Random random = new Random();
 
             new_position = joueurs[id].Position + random.Next(1, 7);
-            penis();
+            
             if (new_position > 63)
             {
                 gameOver = false;
@@ -83,12 +84,14 @@ namespace Travail1.Controllers
             else if (new_position == 63)
             {
                 joueurs[id].Position = new_position;
+                penis();
                 gameOver = true;
             }
             else
             {
                 gameOver = false;
                 joueurs[id].Position = new_position;
+                penis();
                 Tour();
             }
         }
