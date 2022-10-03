@@ -4,14 +4,14 @@ namespace Travail1.Models.Point
 {
     public class Points
     {
-        private Random random = new Random();
         private int valeur;
-        private int chance;
 
         public Points(int valeur)
         {
-            this.valeur = valeur;
+            this.Valeur = valeur;
         }
+
+        public int Valeur { get => valeur; set => valeur = value; }
 
         public virtual int ajouterpoint(int pointCourant, int pointTotal)
         {
@@ -19,9 +19,10 @@ namespace Travail1.Models.Point
             return valeur;
         }
 
-        public virtual int ObtenirPoints()
+        public virtual int ObtenirPoints(int pointsTotal)
         {
-            return valeur;
+            Valeur = pointsTotal;
+            return Valeur;
         }
     }
 }

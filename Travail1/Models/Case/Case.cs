@@ -9,7 +9,7 @@ namespace Travail1.Models.Case
         protected int position;
         protected int largeur;
 
-        public int Points { get => points.ObtenirPoints(); set => points.ObtenirPoints(); }
+        public int Points { get => points.ObtenirPoints(0); set => points.ObtenirPoints(0); }
 
         public Case(Points points, int position)
         {
