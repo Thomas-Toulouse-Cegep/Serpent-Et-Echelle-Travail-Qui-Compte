@@ -9,7 +9,6 @@ namespace Travail1.Controllers
         private Case[] cases;
         private Joueur[] joueurs;
         public Points pts = new Points(0);
-        private int i;
         private int id;
         private bool gameOver;
         private Random RandSeed = new Random(69);
@@ -18,6 +17,7 @@ namespace Travail1.Controllers
         private int nbSaut = 0;
         private int nbSerpent = 0;
         private int nbTrape = 0;
+        private Random random = new Random();
 
         public Joueur[] Joueurs { get => joueurs; }
         public int Id { get => id; set => id = value; }
@@ -38,7 +38,6 @@ namespace Travail1.Controllers
 
         private void InitialiserCases()
         {
-
             cases = new Case[64];
 
             //3 premieres cases safe
@@ -56,30 +55,85 @@ namespace Travail1.Controllers
             //autres cases random
             for (int i = 3; i < cases.Length - 3; i++)
             {
-                int randCase = RandSeed.Next(0, 5);
+                int randCase = RandSeed.Next(0, 8);
 
                 //case echelle
                 if (randCase == 1)
                 {
-                    cases[i] = new CaseEchelle(new Points(0), i);
-                    nbEchelle++;
+                    //4 case echelle
+                    if (Echelle())
+                    {
+                        //pas a la fin
+                        if (i < 57)
+                        {
+                            cases[i] = new CaseEchelle(new Points(0), i);
+                            nbEchelle++;
+                        }
+                        else
+                        {
+                            cases[i] = new Case(new Points(i), i);
+                        }
                 }
+                else
+                {
+                    cases[i] = new Case(new Points(i), i);
+                }
+            }
 
                 //case saut
                 else if (randCase == 2)
                 {
-                    cases[i] = new CaseSaut(new Points(0), i);
+                    //4 case saut
+                    if (Saut())
+                    {
+                        cases[i] = new CaseSaut(new Points(0), i);
+                        nbSaut++;
+                    }
+                    else
+                    {
+                        cases[i] = new Case(new Points(i), i);
+                    }
+                }
+
+                //case Serpent
+                else if (randCase == 3)
+                {
+                    //4 case Serpent
+                    if (Serpent())
+                    {
+                        //pas au debut
+                        if (i > 8)
+                        {
+                            cases[i] = new CaseSerpent(new Points(0), i);
+                            nbSerpent++;
+                        }
+                        else
+                        {
+                            cases[i] = new Case(new Points(i), i);
+                        }
+                    }
+                    else
+                    {
+                        cases[i] = new Case(new Points(i), i);
+                    }
                 }
 
                 //case trape
-                else if (randCase == 3)
-                {
-                    cases[i] = new CaseTrappe(new Points(0), i);
-                }
                 else if (randCase == 4)
                 {
-                    cases[i] = new CaseTrappe(new Points(0), i);
+                    //4 case trape
+                    if (Trape())
+                    {
+                        cases[i] = new CaseTrappe(new Points(0), i);
+                        nbTrape++;
+                    }
+                    else
+                    {
+                        cases[i] = new Case(new Points(i), i);
+                    }
                 }
+
+                //case
                 else
                 {
                     cases[i] = new Case(new Points(i), i);
@@ -110,34 +164,61 @@ namespace Travail1.Controllers
 
         public void penis()
         {
-            MessageBox.Show(joueurs[id].Position.ToString());
-            pts.ajouterpoint(joueurs[id].Position, joueurs[id].Points);
-            MessageBox.Show(joueurs[id].Points.ToString());
+            //MessageBox.Show(joueurs[id].Position.ToString());
+            //pts.ajouterpoint(joueurs[id].Position, joueurs[id].Points);
+            //MessageBox.Show(joueurs[id].Points.ToString());
         }
 
         public void AvancerJoueur()
-        {
-            int new_position = 0;
+        {            
             Random random = new Random();
+            int newPosition = joueurs[id].Position + random.Next(1, 7);
+            int next = 0;
 
-            new_position = joueurs[id].Position + random.Next(1, 7);
-            
-            if (new_position > 63)
+            if (newPosition > 63)
             {
                 gameOver = false;
-
                 Tour();
             }
-            else if (new_position == 63)
+            else if (newPosition == 63)
             {
-                joueurs[id].Position = new_position;
+                joueurs[id].Position = newPosition;
                 penis();
                 gameOver = true;
             }
             else
             {
                 gameOver = false;
-                joueurs[id].Position = new_position;
+
+                string nextCase = cases[newPosition].GetType().Name;
+                MessageBox.Show(nextCase);
+
+                if (nextCase == "CaseEchelle")
+                {
+                    next = nextEchelle();
+                    newPosition = newPosition + next;
+                }
+                else if (nextCase == "CaseSaut")
+                {
+                    next = nextSaut();
+                    newPosition = newPosition + next;
+                }
+                else if (nextCase == "CaseSerpent")
+                {
+                    next = nextSerpent();
+                    newPosition = newPosition - next;
+                }
+                else if (nextCase == "CaseTrappe")
+                {
+                    next = nextTrappe();
+                    newPosition = newPosition - next;
+                    if (newPosition < 0)
+                    {
+                        newPosition = 0;
+                    }
+                }
+
+                joueurs[id].Position = newPosition;
                 penis();
                 Tour();
             }
@@ -171,8 +252,6 @@ namespace Travail1.Controllers
             {
                 return true;
             }
-
-            nbEchelle++;
         }
 
         private bool Saut()
@@ -185,8 +264,6 @@ namespace Travail1.Controllers
             {
                 return true;
             }
-
-            nbSaut++;
         }
 
         private bool Serpent()
@@ -199,10 +276,7 @@ namespace Travail1.Controllers
             {
                 return true;
             }
-
-            nbSerpent++;
         }
-
         private bool Trape()
         {
             if (nbTrape == 4)
@@ -213,8 +287,28 @@ namespace Travail1.Controllers
             {
                 return true;
             }
+        }
 
-            nbTrape++;
+        private int nextEchelle()
+        {
+            return 6;
+        }
+
+        private int nextSaut()
+        {
+            int nb = random.Next(1, 4);
+            return nb;
+        }
+
+        private int nextSerpent()
+        {
+            return 6;
+        }
+
+        private int nextTrappe()
+        {
+            int nb = random.Next(5, 11);
+            return nb;
         }
     }
 }
