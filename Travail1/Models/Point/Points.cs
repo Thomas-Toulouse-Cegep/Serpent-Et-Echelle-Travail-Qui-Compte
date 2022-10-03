@@ -15,9 +15,8 @@ namespace Travail1.Models.Point
 
         public virtual int ajouterpoint(int pointCourant, int pointTotal)
         {
-            pointTotal = pointTotal + pointCourant;
-            pointTotal = valeur;
-            return pointTotal;
+            valeur = pointTotal + pointCourant;
+            return valeur;
         }
 
         public virtual int ObtenirPoints()
