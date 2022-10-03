@@ -162,11 +162,11 @@ namespace Travail1.Controllers
             return bitmap;
         }
 
-        public void penis()
+        public void ObtenirPoints()
         {
-            int ss = pts.ajouterpoint(joueurs[id].Position, Convert.ToInt32(joueurs[id].points));
-            joueurs[id].points = ss;
-            MessageBox.Show("lol = " + joueurs[id].Points.ToString());
+            int pointJoueur = pts.ajouterpoint(joueurs[id].Position, Convert.ToInt32(joueurs[id].points));
+            joueurs[id].points = pointJoueur;
+            //MessageBox.Show("lol = " + joueurs[id].Points.ToString());
         }
 
         public void AvancerJoueur()
@@ -183,7 +183,7 @@ namespace Travail1.Controllers
             else if (newPosition == 63)
             {
                 joueurs[id].Position = newPosition;
-                penis();
+                ObtenirPoints();
                 gameOver = true;
             }
             else
@@ -191,7 +191,7 @@ namespace Travail1.Controllers
                 gameOver = false;
 
                 string nextCase = cases[newPosition].GetType().Name;
-                MessageBox.Show(nextCase);
+                // MessageBox.Show(nextCase);
 
                 if (nextCase == "CaseEchelle")
                 {
@@ -219,7 +219,7 @@ namespace Travail1.Controllers
                 }
 
                 joueurs[id].Position = newPosition;
-                penis();
+                ObtenirPoints();
                 Tour();
             }
         }
