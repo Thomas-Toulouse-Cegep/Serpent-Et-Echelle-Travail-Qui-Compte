@@ -9,7 +9,7 @@ namespace Travail1.Models.Case
 {
     internal class CaseTrappe : Case
     {
-        public CaseTrappe(Points points, int position) : base(points, position)
+        public CaseTrappe(PointNegatif points, int position) : base(points, position)
         {
         }
 

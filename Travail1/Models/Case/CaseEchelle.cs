@@ -9,7 +9,7 @@ namespace Travail1.Models.Case
 {
     internal class CaseEchelle : Case
     {
-        public CaseEchelle(Points points, int position) : base(points, position)
+        public CaseEchelle(PointQuitteOuDouble points, int position) : base(points, position)
         {
         }
 
