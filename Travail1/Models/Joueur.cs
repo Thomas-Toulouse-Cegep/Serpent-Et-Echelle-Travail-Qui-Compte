@@ -6,7 +6,7 @@ namespace Travail1.Models
     {
         private int id;
         private string nom;
-        private int points = 0;
+        private int points ;
         private int position;
         private Color couleur;
         private int diametre;

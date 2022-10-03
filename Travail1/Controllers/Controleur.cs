@@ -38,7 +38,6 @@ namespace Travail1.Controllers
 
         private void InitialiserCases()
         {
-
             cases = new Case[64];
 
             //3 premieres cases safe
@@ -61,7 +60,7 @@ namespace Travail1.Controllers
                 //case echelle
                 if (randCase == 1)
                 {
-                    cases[i] = new CaseEchelle(new Points(0), i);
+                    cases[i] = new CaseEchelle(new PointQuitteOuDouble(0), i);
                     nbEchelle++;
                 }
 
@@ -74,11 +73,11 @@ namespace Travail1.Controllers
                 //case trape
                 else if (randCase == 3)
                 {
-                    cases[i] = new CaseTrappe(new Points(0), i);
+                    cases[i] = new CaseTrappe(new PointNegatif(0), i);
                 }
                 else if (randCase == 4)
                 {
-                    cases[i] = new CaseTrappe(new Points(0), i);
+                    cases[i] = new CaseTrappe(new PointNegatif(0), i);
                 }
                 else
                 {
@@ -110,9 +109,12 @@ namespace Travail1.Controllers
 
         public void penis()
         {
-            MessageBox.Show(joueurs[id].Position.ToString());
+            MessageBox.Show("player pos :" + joueurs[id].Position.ToString());
+            cases[joueurs[id].Position].Points += joueurs[id].Position;
             pts.ajouterpoint(joueurs[id].Position, joueurs[id].Points);
-            MessageBox.Show(joueurs[id].Points.ToString());
+            // pts.ObtenirPoints(joueurs[id].Points);
+            pts.Valeur += joueurs[id].Points+pts.Valeur;
+            MessageBox.Show("player point : " + joueurs[id].Points.ToString());
         }
 
         public void AvancerJoueur()
@@ -121,11 +123,11 @@ namespace Travail1.Controllers
             Random random = new Random();
 
             new_position = joueurs[id].Position + random.Next(1, 7);
-            
+
             if (new_position > 63)
             {
                 gameOver = false;
-
+                penis();
                 Tour();
             }
             else if (new_position == 63)
