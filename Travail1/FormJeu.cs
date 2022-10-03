@@ -16,16 +16,16 @@ namespace Travail1
             this.controleur = controleur;
             picPlancheJeu.Image = controleur.DessinerPlancheJeu();
             InitAffichageJoueurs();
-            abonnement();
         }
 
         public void abonnement()
         {
-            controleur.JoueurChangerNom += Controleur_JoueurChangerNom;
+            //   controleur.JoueurChangerPoint += Controleur_JoueurChangerPoint;
         }
 
-        private void Controleur_JoueurChangerNom(object? sender, string nom)
+        private void Controleur_JoueurChangerPoint(object? sender, int e)
         {
+            controleur.penis();
         }
 
         private void InitAffichageJoueurs()
@@ -43,34 +43,42 @@ namespace Travail1
         }
 
         private void btnAvancer_Click(object sender, EventArgs e)
+
         {
             //debug
             int avant = controleur.Joueurs[id].Position;
             lstDebug.Items.Add("joueur = " + controleur.Joueurs[id].Nom);
             lstDebug.Items.Add("avant = " + avant.ToString());
             //a garder
+
             controleur.AvancerJoueur();
+
             //debug
             int apres = controleur.Joueurs[id].Position;
             lstDebug.Items.Add("apres = " + apres.ToString());
             lstDebug.Items.Add("de = " + (apres - avant).ToString());
+            lstDebug.Items.Add("point= " + controleur.Joueurs[id].Points);
+
             //a garder
+            //controleur.penis();
             Tour();
+            // abonnement();
+
             //debug
             lstDebug.Items.Add("TOUR SUIVANT");
             if (controleur.GameOver == true)
             {
                 if (controleur.Joueurs[0].Points > controleur.Joueurs[1].Points)
                 {
-                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " à gagner et il a " + controleur.Joueurs[id].Points + " Points.");
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " ï¿½ gagner et il a " + controleur.Joueurs[id].Points + " Points.");
                 }
                 else if (controleur.Joueurs[1].Points > controleur.Joueurs[0].Points)
                 {
-                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " à gagner et il a " + controleur.Joueurs[id].Points + " Points.");
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " ï¿½ gagner et il a " + controleur.Joueurs[id].Points + " Points.");
                 }
                 else
                 {
-                    MessageBox.Show("Le joueur " + controleur.Joueurs[0].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en égalité avec " + controleur.Joueurs[id].Points + " Points.");
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[0].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en ï¿½galitï¿½ avec " + controleur.Joueurs[id].Points + " Points.");
                 }
 
                 this.Hide();
@@ -78,7 +86,8 @@ namespace Travail1
                 formMenu.ShowDialog();
                 Close();
             }
-            MessageBox.Show("CACA");
+            // controleur.Cases[controleur.Joueurs[id].Position].Points = controleur.Joueurs[id].Position ;
+            //controleur.Joueurs[id].Points += controleur.Cases[controleur.Joueurs[id].Position];
         }
 
         private void Tour()
@@ -88,12 +97,14 @@ namespace Travail1
                 id = 1;
                 lblJoueur.Text = controleur.Joueurs[id].Nom;
                 lblJoueur.ForeColor = Color.Red;
+                abonnement();
             }
             else
             {
                 id = 0;
                 lblJoueur.Text = controleur.Joueurs[id].Nom;
                 lblJoueur.ForeColor = Color.Blue;
+                abonnement();
             }
         }
 

@@ -8,6 +8,8 @@ namespace Travail1.Controllers
     {
         private Case[] cases;
         private Joueur[] joueurs;
+        public Points pts = new Points(0);
+        private int i;
         private int id;
         private bool gameOver;
         private Random RandSeed = new Random(69);
@@ -20,10 +22,11 @@ namespace Travail1.Controllers
         public Joueur[] Joueurs { get => joueurs; }
         public int Id { get => id; set => id = value; }
         public bool GameOver { get => gameOver; set => gameOver = value; }
+        public Case[] Cases { get => cases; set => cases = value; }
 
         public event EventHandler<Joueur> joueurBouger;
 
-        public event EventHandler<string> JoueurChangerNom;
+        public event EventHandler<int> JoueurChangerPoints;
 
         public Controleur()
         {
@@ -97,12 +100,19 @@ namespace Travail1.Controllers
             Bitmap bitmap = new Bitmap(801, 801);
             using (Graphics graphics = Graphics.FromImage(bitmap))
             {
-                foreach (var uneCase in cases)
+                foreach (var uneCase in Cases)
                 {
                     uneCase.Dessiner(graphics);
                 }
             }
             return bitmap;
+        }
+
+        public void penis()
+        {
+            MessageBox.Show(joueurs[id].Position.ToString());
+            pts.ajouterpoint(joueurs[id].Position, joueurs[id].Points);
+            MessageBox.Show(joueurs[id].Points.ToString());
         }
 
         public void AvancerJoueur()
@@ -111,20 +121,24 @@ namespace Travail1.Controllers
             Random random = new Random();
 
             new_position = joueurs[id].Position + random.Next(1, 7);
+            
             if (new_position > 63)
             {
                 gameOver = false;
+
                 Tour();
             }
             else if (new_position == 63)
             {
                 joueurs[id].Position = new_position;
+                penis();
                 gameOver = true;
             }
             else
             {
                 gameOver = false;
                 joueurs[id].Position = new_position;
+                penis();
                 Tour();
             }
         }
@@ -134,10 +148,16 @@ namespace Travail1.Controllers
             if (id == 0)
             {
                 id = 1;
+
+                // i = pts.ChangedPoint();
+                //i=pts.ObtenirPoints();
+                // joueurs[id].Points = pts.ObtenirPoints();
             }
             else
             {
                 id = 0;
+                //joueurs[id].Point.ChangedPoint();
+                //joueurs[id].Points = pts.ObtenirPoints();
             }
         }
 

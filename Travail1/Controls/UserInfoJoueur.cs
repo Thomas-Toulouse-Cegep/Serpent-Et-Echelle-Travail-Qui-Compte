@@ -43,7 +43,7 @@ namespace Travail1.Controls
 
         private void Abonner()
         {
-            controleur.JoueurChangerNom += Joueur_ChangedName;
+            // controleur.JoueurChangerNom += Joueur_ChangedName;
         }
 
         private void Joueur_ChangedName(object? sender, string nom)
@@ -55,17 +55,16 @@ namespace Travail1.Controls
         {
             if (controleur is not null)
             {
-                controleur.JoueurChangerNom -= Joueur_ChangedName;
+                // controleur.JoueurChangerNom -= Joueur_ChangedName;
             }
         }
 
         private void InitAffichage()
         {
             lbAffichageJoueur1.Text = controleur.Joueurs[0].Nom;
-            lbAffichageJoueur1.Text = controleur.Joueurs[1].Nom;
+            lbAffichageJoueur2.Text = controleur.Joueurs[1].Nom;
             lbaffichagepointJoueur1.Text = controleur.Joueurs[0].Points.ToString();
-            lbaffichagepointJoueur1.Text = controleur.Joueurs[1].Points.ToString();
-            Console.WriteLine(controleur.Joueurs[0].Nom);
+            lbaffichagepointJoueur2.Text = controleur.Joueurs[1].Points.ToString();
         }
 
         private void UserInfoJoueur_Load(object sender, EventArgs e)

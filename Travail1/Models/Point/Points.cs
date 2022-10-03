@@ -1,4 +1,6 @@
-﻿namespace Travail1.Models.Point
+﻿using Travail1.Models.Case;
+
+namespace Travail1.Models.Point
 {
     public class Points
     {
@@ -11,34 +13,15 @@
             this.valeur = valeur;
         }
 
-        public int ObtenirPoints(Joueur joueur)
+        public virtual int ajouterpoint(int pointCourant, int pointTotal)
         {
-            int point = joueur.Points;
-            int position = joueur.Position;
+            pointTotal = pointTotal + pointCourant;
+            pointTotal = valeur;
+            return pointTotal;
+        }
 
-            //joueur.Points = position;
-
-            int chance = random.Next(1, 101);
-            if (chance <= 40)
-            {
-                valeur = valeur + position;
-                point = point + valeur;
-            }
-            else if (chance > 40 & chance <= 80)
-            {
-                valeur = valeur - position;
-                point = point + valeur;
-            }
-            else if (chance > 80 & chance <= 90)
-            {
-                valeur = position * 2;
-                point = point + valeur;
-            }
-            else
-            {
-                valeur = position * 0;
-                point = point + valeur;
-            }
+        public virtual int ObtenirPoints()
+        {
             return valeur;
         }
     }
