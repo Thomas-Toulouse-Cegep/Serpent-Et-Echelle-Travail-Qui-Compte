@@ -66,18 +66,16 @@ namespace Travail1.Controllers
                 {
                     cases[i] = new CaseSaut(new Points(0), i);
                 }
-                
+
                 //case trape
                 else if (randCase == 3)
                 {
-                    cases[i] = new CaseTrape(new Points(0), i);
+                    cases[i] = new CaseTrappe(new Points(0), i);
                 }
-
                 else if (randCase == 4)
                 {
-                    cases[i] = new CaseSerpent(new Points(0), i);
+                    cases[i] = new CaseTrappe(new Points(0), i);
                 }
-
                 else
                 {
                     cases[i] = new Case(new Points(i), i);
@@ -128,7 +126,6 @@ namespace Travail1.Controllers
                 joueurs[id].Position = new_position;
                 Tour();
             }
-
         }
 
         private void Tour()
