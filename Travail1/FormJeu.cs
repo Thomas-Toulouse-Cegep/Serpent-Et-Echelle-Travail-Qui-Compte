@@ -1,6 +1,5 @@
 using Travail1.Controllers;
 using Travail1.Controls;
-using Travail1.Models;
 using Travail1.Views;
 
 namespace Travail1
@@ -61,9 +60,23 @@ namespace Travail1
             lstDebug.Items.Add("TOUR SUIVANT");
             if (controleur.GameOver == true)
             {
+                if (controleur.Joueurs[0].Points > controleur.Joueurs[1].Points)
+                {
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " à gagner et il a " + controleur.Joueurs[id].Points + " Points.");
+                }
+                else if (controleur.Joueurs[1].Points > controleur.Joueurs[0].Points)
+                {
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " à gagner et il a " + controleur.Joueurs[id].Points + " Points.");
+                }
+                else
+                {
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[0].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en égalité avec " + controleur.Joueurs[id].Points + " Points.");
+                }
+
+                this.Hide();
                 FormMenu formMenu = new FormMenu();
-                formMenu.Show();
-                // Close();
+                formMenu.ShowDialog();
+                Close();
             }
             MessageBox.Show("CACA");
         }

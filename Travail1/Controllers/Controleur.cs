@@ -1,4 +1,4 @@
-﻿using Travail1.Models;
+using Travail1.Models;
 using Travail1.Models.Case;
 using Travail1.Models.Point;
 
@@ -35,6 +35,7 @@ namespace Travail1.Controllers
 
         private void InitialiserCases()
         {
+
             cases = new Case[64];
 
             //3 premieres cases safe
