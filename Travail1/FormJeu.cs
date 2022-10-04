@@ -25,7 +25,7 @@ namespace Travail1
 
         private void Controleur_JoueurChangerPoint(object? sender, int e)
         {
-            controleur.penis();
+            controleur.ObtenirPoints();
         }
 
         private void InitAffichageJoueurs()
@@ -60,7 +60,7 @@ namespace Travail1
             lstDebug.Items.Add("point= " + controleur.Joueurs[id].Points);
 
             //a garder
-            //controleur.penis();
+            //controleur.ObtenirPoints();
             Tour();
             // abonnement();
 
@@ -68,22 +68,22 @@ namespace Travail1
             lstDebug.Items.Add("TOUR SUIVANT");
             if (controleur.GameOver == true)
             {
-                //if (controleur.Joueurs[0].Points > controleur.Joueurs[1].Points)
-                //{
-                //    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " � gagner et il a " + controleur.Joueurs[id].Points + " Points.");
-                //}
-                //else if (controleur.Joueurs[1].Points > controleur.Joueurs[0].Points)
-                //{
-                //    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " � gagner et il a " + controleur.Joueurs[id].Points + " Points.");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Le joueur " + controleur.Joueurs[0].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en �galit� avec " + controleur.Joueurs[id].Points + " Points.");
-                //}
+                if (controleur.Joueurs[0].Points > controleur.Joueurs[1].Points)
+                {
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " � gagner et il a " + controleur.Joueurs[id].Points + " Points.");
+                }
+                else if (controleur.Joueurs[1].Points > controleur.Joueurs[0].Points)
+                {
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[id].Nom + " � gagner et il a " + controleur.Joueurs[id].Points + " Points.");
+                }
+                else
+                {
+                    MessageBox.Show("Le joueur " + controleur.Joueurs[0].Nom + " et le joueur " + controleur.Joueurs[1].Nom + " sont en �galit� avec " + controleur.Joueurs[id].Points + " Points.");
+                }
 
-                this.Hide();
-                FormMenu formMenu = new FormMenu();
-                formMenu.ShowDialog();
+                this.Close();
+                /*  FormMenu formMenu = new FormMenu();
+                  formMenu.ShowDialog();*/
                 Close();
             }
             // controleur.Cases[controleur.Joueurs[id].Position].Points = controleur.Joueurs[id].Position ;
